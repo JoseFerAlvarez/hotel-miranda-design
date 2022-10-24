@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Old+Standard+TT&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --dark-color: #222222;
+    --dark-color-secondary: #333333;
+    --dark-color-terciary: #777777;
+    --light-color: #E5E5E5;
+    --white-color: #FFFFFF;
+    --red-color: #DE5777;
+    --golden-color: #BEAD8E;
+    --golden-color-secondary: #AD9D82;
+
+    --font-archivo: "Archivo", "sans-serif";
+    --font-old-standard: "Old Standard TT", "serif";
+    --font-roboto: "Roboto", "sans-serif";
+}
+
 html,
 * {
     box-sizing: border-box;
