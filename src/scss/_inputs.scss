@@ -1,0 +1,55 @@
+.input {
+    display: inline-block;
+    position: relative;
+    min-width: 335px;
+
+    &__text {
+        border: none;
+        width: 100%;
+        font-size: 0.8rem;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+    }
+
+
+    &-date__text {
+        border-bottom: 2px solid var(--golden-color);
+        padding: 0 0 14px 25px;
+        font-family: var(--font-roboto);
+        color: #686868;
+    }
+
+    &-check__text {
+        padding: 20px 40px 20px 25px;
+        background-color: var(--light-color-2);
+        font-family: var(--font-archivo);
+        color: var(--dark-color-terciary);
+    }
+
+    &-contact__text {
+        padding: 20px 25px 20px 45px;
+        background-color: var(--light-color-2);
+        font-family: var(--font-archivo);
+        color: var(--dark-color-terciary);
+    }
+
+    &-date__icon {
+        left: 0px;
+    }
+
+    &-check__icon {
+        right: 20px;
+        top: 15px;
+    }
+
+    &-contact__icon {
+        left: 20px;
+        top: 15px;
+    }
+}

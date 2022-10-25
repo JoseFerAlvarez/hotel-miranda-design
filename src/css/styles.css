@@ -71,6 +71,52 @@
     background-color: transparent;
   }
 }
+.input {
+  display: inline-block;
+  position: relative;
+  min-width: 335px;
+}
+.input__text {
+  border: none;
+  width: 100%;
+  font-size: 0.8rem;
+}
+.input__text:focus {
+  outline: none;
+}
+.input__icon {
+  position: absolute;
+}
+.input-date__text {
+  border-bottom: 2px solid var(--golden-color);
+  padding: 0 0 14px 25px;
+  font-family: var(--font-roboto);
+  color: #686868;
+}
+.input-check__text {
+  padding: 20px 40px 20px 25px;
+  background-color: var(--light-color-2);
+  font-family: var(--font-archivo);
+  color: var(--dark-color-terciary);
+}
+.input-contact__text {
+  padding: 20px 25px 20px 45px;
+  background-color: var(--light-color-2);
+  font-family: var(--font-archivo);
+  color: var(--dark-color-terciary);
+}
+.input-date__icon {
+  left: 0px;
+}
+.input-check__icon {
+  right: 20px;
+  top: 15px;
+}
+.input-contact__icon {
+  left: 20px;
+  top: 15px;
+}
+
 :root {
   --dark-color: #222222;
   --dark-color-secondary: #333333;
@@ -85,7 +131,7 @@
   --golden-color-secondary: #AD9D82;
   --font-archivo: "Archivo", "sans-serif";
   --font-old-standard: "Old Standard TT", "serif";
-  --font-roboto: "Roboto", "sans-serif";
+  --font-roboto: "Roboto";
 }
 
 html,
