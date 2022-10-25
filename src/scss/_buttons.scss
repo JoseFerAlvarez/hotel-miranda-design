@@ -1,0 +1,80 @@
+.button {
+    min-width: 215px;
+    min-height: 60px;
+    border: none;
+    font-family: var(--font-archivo);
+    font-weight: 700;
+    font-size: 0.8rem;
+
+    &-golden {
+        background-color: var(--golden-color);
+        color: var(--white-color);
+    }
+
+    &-dark {
+        background-color: var(--dark-color-secondary);
+        color: var(--white-color);
+        border: 1px solid var(--light-color-secondary);
+    }
+}
+
+.burger {
+    display: inline-block;
+    background-image: url("../assets/icons/burger.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    min-width: 20px;
+    min-height: 20px;
+
+    &-close {
+        background-image: url("../assets/icons/burger-cross.svg");
+    }
+}
+
+.icon-button {
+    border: none;
+    background-color: transparent;
+}
+
+.arrow-button {
+    min-height: 32px;
+    min-width: 32px;
+    border: none;
+
+    &-white {
+        background-color: var(--white-color);
+    }
+
+    &-golden {
+        background-color: var(--golden-color);
+    }
+}
+
+.social-media-link {
+    background-color: var(--light-color-2);
+    padding: 16px;
+    transition: 0.3s;
+    font-size: 1.5rem;
+
+    &__icon {
+        margin: auto;
+    }
+
+    &:hover {
+        background-color: var(--golden-color);
+    }
+
+    &:hover>&__icon {
+        filter: brightness(0) invert(1);
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .icon-button {
+        min-width: 60px;
+        min-height: 60px;
+        border: 1px solid var(--light-color-terciary);
+        background-color: transparent;
+    }
+}

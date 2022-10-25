@@ -1,3 +1,5 @@
+@use "./buttons";
+
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Old+Standard+TT&family=Roboto:wght@400;700&display=swap');
 
 :root {
@@ -5,6 +7,9 @@
     --dark-color-secondary: #333333;
     --dark-color-terciary: #777777;
     --light-color: #E5E5E5;
+    --light-color-2: #F8F8F8;
+    --light-color-secondary: #FFFFFF54;
+    --light-color-terciary: #8585854D;
     --white-color: #FFFFFF;
     --red-color: #DE5777;
     --golden-color: #BEAD8E;

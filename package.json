@@ -5,7 +5,8 @@
     "sass": "^1.55.0"
   },
   "scripts": {
-    "start": "http-server"
+    "start": "http-server",
+    "compile": "sass --watch src/scss/styles.scss src/css/styles.css"
   },
   "dependencies": {
     "swiper": "^8.4.4"
