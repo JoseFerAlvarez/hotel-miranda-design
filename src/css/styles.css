@@ -75,47 +75,47 @@
   }
 }
 .input {
-  display: inline-block;
-  position: relative;
+  border: none;
+  font-size: 0.8rem;
   min-width: 335px;
 }
-.input__text {
-  border: none;
-  width: 100%;
-  font-size: 0.8rem;
-}
-.input__text:focus {
+.input:focus {
   outline: none;
 }
-.input__icon {
-  position: absolute;
-}
-.input-date__text {
+.input__date--golden {
+  display: flex;
+  padding: 14px 0;
+  flex-direction: row-reverse;
   border-bottom: 2px solid var(--golden-color);
-  padding: 0 0 14px 25px;
   font-family: var(--font-roboto);
   color: #686868;
 }
-.input-check__text {
-  padding: 20px 40px 20px 25px;
+.input__date--golden::-webkit-calendar-picker-indicator {
+  filter: invert(0.5) sepia(1);
+}
+.input__date--filled {
+  padding: 20px 30px;
   background-color: var(--light-color-2);
   font-family: var(--font-archivo);
   color: var(--dark-color-terciary);
 }
-.input-contact__text {
+.input--contact {
+  display: inline-block;
+  position: relative;
+}
+.input--contact__text {
+  border: none;
+  font-size: 0.8rem;
   padding: 20px 25px 20px 45px;
   background-color: var(--light-color-2);
   font-family: var(--font-archivo);
   color: var(--dark-color-terciary);
 }
-.input-date__icon {
-  left: 0px;
+.input--contact__text:focus {
+  outline: none;
 }
-.input-check__icon {
-  right: 20px;
-  top: 15px;
-}
-.input-contact__icon {
+.input--contact__icon {
+  position: absolute;
   left: 20px;
   top: 15px;
 }

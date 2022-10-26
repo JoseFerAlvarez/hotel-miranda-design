@@ -1,55 +1,53 @@
 .input {
-    display: inline-block;
-    position: relative;
+    border: none;
+    font-size: 0.8rem;
     min-width: 335px;
 
-    &__text {
-        border: none;
-        width: 100%;
-        font-size: 0.8rem;
+    &:focus {
+        outline: none;
+    }
 
-        &:focus {
-            outline: none;
+    &__date--golden {
+        display: flex;
+        padding: 14px 0;
+        flex-direction: row-reverse;
+        border-bottom: 2px solid var(--golden-color);
+        font-family: var(--font-roboto);
+        color: #686868;
+
+        &::-webkit-calendar-picker-indicator {
+            filter: invert(0.5) sepia(1);
         }
     }
 
-    &__icon {
-        position: absolute;
-    }
-
-
-    &-date__text {
-        border-bottom: 2px solid var(--golden-color);
-        padding: 0 0 14px 25px;
-        font-family: var(--font-roboto);
-        color: #686868;
-    }
-
-    &-check__text {
-        padding: 20px 40px 20px 25px;
+    &__date--filled {
+        padding: 20px 30px;
         background-color: var(--light-color-2);
         font-family: var(--font-archivo);
         color: var(--dark-color-terciary);
     }
 
-    &-contact__text {
-        padding: 20px 25px 20px 45px;
-        background-color: var(--light-color-2);
-        font-family: var(--font-archivo);
-        color: var(--dark-color-terciary);
-    }
+    &--contact {
+        display: inline-block;
+        position: relative;
 
-    &-date__icon {
-        left: 0px;
-    }
+        &__text {
+            border: none;
+            font-size: 0.8rem;
+            padding: 20px 25px 20px 45px;
+            background-color: var(--light-color-2);
+            font-family: var(--font-archivo);
+            color: var(--dark-color-terciary);
 
-    &-check__icon {
-        right: 20px;
-        top: 15px;
-    }
+            &:focus {
+                outline: none;
+            }
+        }
 
-    &-contact__icon {
-        left: 20px;
-        top: 15px;
+        &__icon {
+            position: absolute;
+            left: 20px;
+            top: 15px;
+        }
     }
 }
