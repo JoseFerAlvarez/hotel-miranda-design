@@ -1,0 +1,48 @@
+.statistics {
+    display: block;
+    background-color: var(--dark-color);
+    padding: 20px 0;
+
+    &__text {
+        text-align: center;
+        font-family: var(--font-roboto);
+        font-weight: 700;
+    }
+
+    &__stat {
+        padding: 20px 0;
+
+        &__img {
+            display: block;
+            margin: auto;
+        }
+
+        &__number {
+            margin-top: 15px;
+            font-size: 3.75rem;
+            color: var(--white-color);
+        }
+
+        &__text {
+            font-size: 1rem;
+            color: #999999;
+        }
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .statistics {
+        display: flex;
+        justify-content: space-around;
+
+        &__text {
+            text-align: start;
+        }
+
+        &__stat {
+            &__img {
+                margin: 0;
+            }
+        }
+    }
+}

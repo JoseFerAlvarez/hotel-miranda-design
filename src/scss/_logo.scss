@@ -20,6 +20,7 @@
     &--golden {
 
         &__back {
+            box-shadow: none;
             background-color: var(--golden-color);
             min-width: 80px;
             min-height: 80px;
