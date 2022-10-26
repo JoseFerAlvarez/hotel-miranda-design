@@ -1,0 +1,39 @@
+.availability {
+    background-color: var(--dark-color);
+    padding: 35px 20px;
+
+    &__text {
+        font-family: var(--font-roboto);
+        font-weight: 700;
+        font-size: 1rem;
+        color: var(--white-color);
+    }
+
+    &__input {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .availability {
+        display: flex;
+        padding: 35px 20%;
+        align-items: center;
+        justify-content: space-between;
+
+        &__date__container {
+            display: flex;
+            gap: 30px;
+            width: 60%;
+        }
+
+        &__date {
+            width: 100%;
+        }
+
+        &__button {
+            justify-self: flex-end;
+        }
+    }
+}

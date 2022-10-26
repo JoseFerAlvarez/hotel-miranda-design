@@ -55,11 +55,17 @@
     </header>
 
     <section class="availability">
-        <p>Arrival Date</p>
-        <input class="input input__date--golden" type="date">
-        <p>LeDeparture Date</p>
-        <input class="input input__date--golden" type="date">
-        <button class="button button-golden">CHECK AVAILABILITY</button>
+        <div class="availability__date__container">
+            <div class="availability__date">
+                <p class="availability__text">Arrival Date</p>
+                <input class="input input__date--golden availability__input" type="date">
+            </div>
+            <div class="availability__date">
+                <p class="availability__text">LeDeparture Date</p>
+                <input class="input input__date--golden availability__input" type="date">
+            </div>
+        </div>
+        <button class="button button-golden availability__button">CHECK AVAILABILITY</button>
     </section>
 
     <script type="module" src="./src/js/index.js"></script>

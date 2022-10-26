@@ -85,6 +85,7 @@
   display: flex;
   padding: 14px 0;
   flex-direction: row-reverse;
+  background-color: transparent;
   border-bottom: 2px solid var(--golden-color);
   font-family: var(--font-roboto);
   color: #686868;
@@ -407,7 +408,7 @@
 
 @media only screen and (min-width: 1000px) {
   .header {
-    padding: 75px 25%;
+    padding: 75px 20%;
   }
   .header__text__title {
     font-size: 7.5rem;
@@ -416,6 +417,40 @@
   .header__button {
     display: inline-block;
     margin: 0 15px;
+  }
+}
+.availability {
+  background-color: var(--dark-color);
+  padding: 35px 20px;
+}
+.availability__text {
+  font-family: var(--font-roboto);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--white-color);
+}
+.availability__input {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .availability {
+    display: flex;
+    padding: 35px 20%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .availability__date__container {
+    display: flex;
+    gap: 30px;
+    width: 60%;
+  }
+  .availability__date {
+    width: 100%;
+  }
+  .availability__button {
+    justify-self: flex-end;
   }
 }
 :root {
