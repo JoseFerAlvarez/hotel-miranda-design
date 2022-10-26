@@ -18,17 +18,21 @@
     }
 }
 
-.burger {
-    display: inline-block;
-    background-image: url("../assets/icons/burger.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+.burger__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-width: 20px;
     min-height: 20px;
+}
 
-    &-close {
-        background-image: url("../assets/icons/burger-cross.svg");
+.burger {
+    &--open {
+        content: url("../assets/icons/burger.svg");
+    }
+
+    &--close {
+        content: url("../assets/icons/burger-cross.svg");
     }
 }
 

@@ -17,17 +17,19 @@
   border: 1px solid var(--light-color-secondary);
 }
 
-.burger {
-  display: inline-block;
-  background-image: url("../assets/icons/burger.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+.burger__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-width: 20px;
   min-height: 20px;
 }
-.burger-close {
-  background-image: url("../assets/icons/burger-cross.svg");
+
+.burger--open {
+  content: url("../assets/icons/burger.svg");
+}
+.burger--close {
+  content: url("../assets/icons/burger-cross.svg");
 }
 
 .icon-button {
@@ -118,6 +120,48 @@
   top: 15px;
 }
 
+.logo {
+  display: flex;
+  gap: 15px;
+}
+.logo__back {
+  background-color: var(--white-color);
+  box-shadow: 0px 14px 24px 0px rgba(139, 139, 139, 0.25);
+  min-width: 35px;
+  min-height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo__letter {
+  font-family: var(--font-archivo);
+  font-weight: 700;
+}
+.logo--golden__back {
+  background-color: var(--golden-color);
+  min-width: 80px;
+  min-height: 80px;
+}
+.logo--golden__letter {
+  font-size: 2.5rem;
+  color: var(--white-color);
+}
+.logo--golden__wordmark {
+  min-width: 140px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .logo__back {
+    min-width: 80px;
+    min-height: 80px;
+  }
+  .logo__wordmark {
+    min-width: 140px;
+  }
+  .logo__letter {
+    font-size: 2.5rem;
+  }
+}
 .topbar {
   display: block;
 }
@@ -143,10 +187,6 @@
   gap: 30px;
   width: 30%;
 }
-.topbar__container .burger {
-  max-height: 25px;
-  vertical-align: center;
-}
 .topbar__nav {
   display: none;
 }
@@ -168,17 +208,8 @@
   text-decoration: none;
   color: #111111;
 }
-.topbar .logo {
-  display: flex;
-  gap: 15px;
-}
-.topbar .logo__back {
-  background-color: var(--white-color);
-  box-shadow: 0px 14px 24px 0px rgba(139, 139, 139, 0.25);
-  min-width: 35px;
-  min-height: 35px;
-  display: flex;
-  justify-content: center;
+.topbar__nav--visible {
+  display: block;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -198,19 +229,11 @@
     width: 100%;
     gap: 7%;
   }
-  .burger {
+  .topbar__nav--visible {
     display: none;
   }
-  .logo__back {
-    width: 80px;
-    height: 80px;
-  }
-  .logo__wordmark {
-    max-width: 140px;
-    width: 140px;
-  }
-  .logo__letter {
-    max-width: 30px;
+  .burger__container {
+    display: none;
   }
 }
 :root {
