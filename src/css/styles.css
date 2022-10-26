@@ -77,7 +77,6 @@
 .input {
   border: none;
   font-size: 0.8rem;
-  min-width: 335px;
 }
 .input:focus {
   outline: none;
@@ -381,6 +380,42 @@
   }
   .footer__copyright__links {
     margin-top: 0;
+  }
+}
+.header {
+  display: block;
+  background-color: var(--dark-color-secondary);
+  padding: 75px 20px;
+}
+.header__text__description {
+  font-family: var(--font-archivo);
+  font-weight: 700;
+  font-size: 0.8;
+  color: var(--white-color);
+}
+.header__text__title {
+  font-family: var(--font-old-standard);
+  font-weight: 400;
+  font-size: 3.5rem;
+  color: var(--white-color);
+  margin: 40px 0;
+}
+.header__button {
+  display: block;
+  margin: 15px 0;
+}
+
+@media only screen and (min-width: 1000px) {
+  .header {
+    padding: 75px 25%;
+  }
+  .header__text__title {
+    font-size: 7.5rem;
+    max-width: 800px;
+  }
+  .header__button {
+    display: inline-block;
+    margin: 0 15px;
   }
 }
 :root {
