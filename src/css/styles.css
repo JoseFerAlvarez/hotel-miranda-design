@@ -163,6 +163,45 @@
     font-size: 2.5rem;
   }
 }
+.statistics {
+  display: block;
+  background-color: var(--dark-color);
+  padding: 20px 0;
+}
+.statistics__text {
+  text-align: center;
+  font-family: var(--font-roboto);
+  font-weight: 700;
+}
+.statistics__stat {
+  padding: 20px 0;
+}
+.statistics__stat__img {
+  display: block;
+  margin: auto;
+}
+.statistics__stat__number {
+  margin-top: 15px;
+  font-size: 3.75rem;
+  color: var(--white-color);
+}
+.statistics__stat__text {
+  font-size: 1rem;
+  color: #999999;
+}
+
+@media only screen and (min-width: 1000px) {
+  .statistics {
+    display: flex;
+    justify-content: space-around;
+  }
+  .statistics__text {
+    text-align: start;
+  }
+  .statistics__stat__img {
+    margin: 0;
+  }
+}
 .topbar {
   display: block;
 }
