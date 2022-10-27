@@ -163,6 +163,66 @@
     font-size: 2.5rem;
   }
 }
+.room {
+  width: 100%;
+  max-width: 770px;
+  position: relative;
+}
+.room__container {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.room__rules {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  right: 25%;
+  top: -20px;
+  padding: 10px;
+  background-color: var(--white-color);
+  width: 50%;
+}
+.room__img {
+  width: 100%;
+  height: 230px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../assets/images/hotel.jpg");
+}
+.room__data {
+  background-color: var(--white-color);
+  position: absolute;
+  right: 4%;
+  top: 95%;
+  width: 92%;
+  padding: 5%;
+}
+.room__data__text__title {
+  font-family: var(--font-old-standard);
+  font-weight: 400;
+  font-size: 1.75rem;
+  text-align: center;
+}
+.room__data__text__description {
+  font-family: var(--font-roboto);
+  font-weight: 400;
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--dark-color-terciary);
+}
+.room__data__properties__price {
+  font-family: var(--font-archivo);
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  color: var(--golden-color);
+}
+.room__data__properties__price__night {
+  font-size: 0.8rem;
+}
+
 .statistics {
   display: block;
   background-color: var(--dark-color);

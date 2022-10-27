@@ -1,0 +1,71 @@
+.room {
+    width: 100%;
+    max-width: 770px;
+    position: relative;
+
+    &__container {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+
+    &__rules {
+        display: flex;
+        justify-content: space-around;
+        position: absolute;
+        right: 25%;
+        top: -20px;
+        padding: 10px;
+        background-color: var(--white-color);
+        width: 50%;
+    }
+
+    &__img {
+        width: 100%;
+        height: 230px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-image: url("../assets/images/hotel.jpg");
+    }
+
+    &__data {
+        background-color: var(--white-color);
+        position: absolute;
+        right: 4%;
+        top: 95%;
+        width: 92%;
+        padding: 5%;
+
+        &__text {
+            &__title {
+                font-family: var(--font-old-standard);
+                font-weight: 400;
+                font-size: 1.75rem;
+                text-align: center;
+            }
+
+            &__description {
+                font-family: var(--font-roboto);
+                font-weight: 400;
+                font-size: 0.8rem;
+                text-align: center;
+                color: var(--dark-color-terciary);
+            }
+        }
+
+        &__properties {
+            &__price {
+                font-family: var(--font-archivo);
+                font-weight: 700;
+                font-size: 2rem;
+                text-align: center;
+                color: var(--golden-color);
+
+                &__night {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
