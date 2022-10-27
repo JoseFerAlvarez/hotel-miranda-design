@@ -223,12 +223,25 @@
   font-size: 1.75rem;
   text-align: center;
 }
+.room__data__text__title--grid {
+  font-size: 1.5rem;
+  margin: 15px 0;
+}
 .room__data__text__description {
   font-family: var(--font-roboto);
   font-weight: 400;
   font-size: 0.8rem;
   text-align: center;
   color: var(--dark-color-terciary);
+  line-height: 1.5rem;
+}
+.room__data__text__description--grid {
+  margin-bottom: 5px;
+}
+.room__data__properties--grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 .room__data__properties__price {
   font-family: var(--font-archivo);
@@ -237,13 +250,20 @@
   text-align: center;
   color: var(--golden-color);
 }
+.room__data__properties__price--grid {
+  font-size: 1rem;
+}
 .room__data__properties__price__night {
   font-size: 0.8rem;
+}
+.room__data__properties__price__night--grid {
+  font-size: 1rem;
 }
 .room__data__properties__availability {
   font-family: var(--font-archivo);
   font-weight: 700;
   font-size: 1rem;
+  color: #BDBDBD;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -251,23 +271,48 @@
     width: 40%;
     right: 30%;
   }
+  .room__rules--grid {
+    width: 80%;
+    right: 10%;
+    top: 90%;
+  }
   .room__img {
     height: 500px;
+  }
+  .room__img--grid {
+    width: 100%;
+    height: 240px;
   }
   .room__data {
     display: flex;
   }
+  .room__data--grid {
+    display: block;
+    width: 100%;
+  }
   .room__data__text {
     width: 70%;
   }
+  .room__data__text--grid {
+    width: 100%;
+  }
   .room__data__text__title, .room__data__text__description {
     text-align: start;
+  }
+  .room__data__text__title--grid, .room__data__text__description--grid {
+    text-align: center;
   }
   .room__data__properties {
     width: 30%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+  }
+  .room__data__properties--grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
   }
 }
 .statistics {

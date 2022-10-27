@@ -66,6 +66,11 @@
                 font-weight: 400;
                 font-size: 1.75rem;
                 text-align: center;
+
+                &--grid {
+                    font-size: 1.5rem;
+                    margin: 15px 0;
+                }
             }
 
             &__description {
@@ -74,10 +79,22 @@
                 font-size: 0.8rem;
                 text-align: center;
                 color: var(--dark-color-terciary);
+                line-height: 1.5rem;
+
+                &--grid {
+                    margin-bottom: 5px;
+                }
             }
         }
 
         &__properties {
+
+            &--grid {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+
             &__price {
                 font-family: var(--font-archivo);
                 font-weight: 700;
@@ -85,8 +102,16 @@
                 text-align: center;
                 color: var(--golden-color);
 
+                &--grid {
+                    font-size: 1rem;
+                }
+
                 &__night {
                     font-size: 0.8rem;
+
+                    &--grid {
+                        font-size: 1rem;
+                    }
                 }
             }
 
@@ -94,6 +119,7 @@
                 font-family: var(--font-archivo);
                 font-weight: 700;
                 font-size: 1rem;
+                color: #BDBDBD;
             }
         }
     }
@@ -104,21 +130,46 @@
         &__rules {
             width: 40%;
             right: 30%;
+
+            &--grid {
+                width: 80%;
+                right: 10%;
+                top: 90%;
+            }
         }
 
         &__img {
             height: 500px;
+
+            &--grid {
+                width: 100%;
+                height: 240px;
+            }
         }
 
         &__data {
             display: flex;
 
+            &--grid {
+                display: block;
+                width: 100%;
+            }
+
             &__text {
                 width: 70%;
+
+                &--grid {
+                    width: 100%;
+                }
 
                 &__title,
                 &__description {
                     text-align: start;
+                }
+
+                &__title--grid,
+                &__description--grid {
+                    text-align: center;
                 }
             }
 
@@ -127,6 +178,13 @@
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
+
+                &--grid {
+                    display: flex;
+                    justify-content: center;
+                    gap: 20px;
+                    width: 100%;
+                }
             }
         }
     }
