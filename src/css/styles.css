@@ -453,6 +453,127 @@
     justify-self: flex-end;
   }
 }
+.about-data {
+  padding: 30px 20px;
+}
+.about-data__discover {
+  display: block;
+}
+.about-data__discover__subtitle {
+  font-family: var(--font-archivo);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--dark-color-terciary);
+  margin: 8px 0;
+}
+.about-data__discover__title {
+  font-family: var(--font-old-standard);
+  font-weight: 400;
+  font-size: 3.5rem;
+  color: #111111;
+  margin: 16px 0;
+  overflow-wrap: break-word;
+}
+.about-data__discover__description {
+  font-family: var(--font-archivo);
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--dark-color-terciary);
+  line-height: 1.5rem;
+}
+.about-data__discover__button {
+  margin: 24px 0;
+}
+.about-data__card {
+  display: block;
+  margin: 40px auto;
+}
+.about-data__card__img, .about-data__card__description {
+  display: block;
+  margin: auto;
+  height: 300px;
+  width: 270px;
+}
+.about-data__card__description {
+  position: relative;
+  padding: 40px 35px;
+}
+.about-data__card__description--dark {
+  background-color: var(--dark-color);
+}
+.about-data__card__description__img {
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.about-data__card__description__title {
+  font-family: var(--font-old-standard);
+  font-weight: 400;
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 20px 0;
+}
+.about-data__card__description__title--white {
+  color: var(--white-color);
+}
+.about-data__card__description__text {
+  font-family: var(--font-roboto);
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 1.37rem;
+  text-align: center;
+}
+.about-data__card__description__text--white {
+  color: var(--white-color);
+}
+.about-data__card__description__background {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  width: 140px;
+  filter: opacity(0.1) grayscale(1);
+  z-index: -10;
+}
+
+@media only screen and (min-width: 1000px) {
+  .about-data {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .about-data__discover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    margin-left: 5%;
+    margin-right: 15%;
+  }
+  .about-data__discover__description {
+    width: 70%;
+  }
+  .about-data__discover__button {
+    max-width: 215px;
+  }
+  .about-data__card__container {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .about-data__card {
+    margin: 0;
+  }
+  .about-data__card__img, .about-data__card__description {
+    margin: 15px;
+  }
+  .about-data__card__team {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+  .about-data__card__room {
+    margin-top: 30px;
+  }
+}
 :root {
   --dark-color: #222222;
   --dark-color-secondary: #333333;

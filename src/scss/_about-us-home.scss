@@ -1,0 +1,146 @@
+.about-data {
+    padding: 30px 20px;
+
+    &__discover {
+        display: block;
+
+        &__subtitle {
+            font-family: var(--font-archivo);
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: var(--dark-color-terciary);
+            margin: 8px 0;
+        }
+
+        &__title {
+            font-family: var(--font-old-standard);
+            font-weight: 400;
+            font-size: 3.5rem;
+            color: #111111;
+            margin: 16px 0;
+            overflow-wrap: break-word;
+        }
+
+        &__description {
+            font-family: var(--font-archivo);
+            font-weight: 400;
+            font-size: 0.8rem;
+            color: var(--dark-color-terciary);
+            line-height: 1.5rem;
+        }
+
+        &__button {
+            margin: 24px 0;
+        }
+    }
+
+    &__card {
+        display: block;
+        margin: 40px auto;
+
+        &__img,
+        &__description {
+            display: block;
+            margin: auto;
+            height: 300px;
+            width: 270px;
+        }
+
+        &__description {
+            position: relative;
+            padding: 40px 35px;
+
+            &--dark {
+                background-color: var(--dark-color);
+            }
+
+            &__img {
+                display: block;
+                margin: auto;
+                margin-bottom: 10px;
+            }
+
+            &__title {
+                font-family: var(--font-old-standard);
+                font-weight: 400;
+                font-size: 1.8rem;
+                text-align: center;
+                margin: 20px 0;
+
+                &--white {
+                    color: var(--white-color);
+                }
+            }
+
+            &__text {
+                font-family: var(--font-roboto);
+                font-weight: 400;
+                font-size: 0.8rem;
+                line-height: 1.37rem;
+                text-align: center;
+
+                &--white {
+                    color: var(--white-color);
+                }
+            }
+
+            &__background {
+                position: absolute;
+                right: 0;
+                top: 50px;
+                width: 140px;
+                filter: opacity(0.1) grayscale(1);
+                z-index: -10;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .about-data {
+        display: flex;
+        flex-direction: row-reverse;
+
+        &__discover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 30%;
+            margin-left: 5%;
+            margin-right: 15%;
+
+            &__description {
+                width: 70%;
+            }
+
+            &__button {
+                max-width: 215px;
+            }
+        }
+
+        &__card__container {
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        &__card {
+            margin: 0;
+
+            &__img,
+            &__description {
+                margin: 15px;
+            }
+
+            &__team {
+                display: flex;
+                flex-direction: column-reverse;
+                justify-content: flex-end;
+            }
+
+            &__room {
+                margin-top: 30px;
+            }
+        }
+    }
+}
