@@ -187,7 +187,7 @@
   justify-content: space-around;
   position: absolute;
   right: 25%;
-  top: -20px;
+  top: 0;
   padding: 10px;
   background-color: var(--white-color);
   width: 50%;
@@ -208,10 +208,6 @@
 }
 .room__data {
   background-color: var(--white-color);
-  position: absolute;
-  right: 4%;
-  top: 95%;
-  width: 92%;
   padding: 5%;
 }
 .room__data--grid {
@@ -724,6 +720,60 @@
   }
   .about-data__card__room {
     margin-top: 30px;
+  }
+}
+.room-slider {
+  display: block;
+  text-align: center;
+}
+.room-slider__subtitle {
+  font-family: var(--font-archivo);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--dark-color-terciary);
+}
+.room-slider__title {
+  font-family: var(--font-old-standard);
+  font-size: 3.5rem;
+  margin: 20px 0;
+}
+
+.swiper {
+  margin: 30px 0;
+}
+.swiper__prev-element, .swiper__next-element {
+  user-select: none;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  width: 32px;
+  height: 32px;
+  z-index: 2;
+  background-color: var(--white-color);
+  font-family: var(--font-old-standard);
+  font-weight: 700;
+  cursor: pointer;
+}
+.swiper__prev-element:hover, .swiper__next-element:hover {
+  background-color: var(--golden-color);
+  color: var(--white-color);
+}
+.swiper__next-element {
+  right: 10px;
+  left: auto;
+}
+.swiper__prev-element {
+  left: 10px;
+  right: auto;
+  transform: rotate(180deg);
+}
+
+@media only screen and (min-width: 1000px) {
+  .swiper__prev-element, .swiper__next-element {
+    width: 80px;
+    height: 80px;
   }
 }
 :root {
