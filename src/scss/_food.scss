@@ -1,0 +1,46 @@
+.food {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: var(--dark-color);
+    }
+
+    &__img {
+        min-width: 120px;
+        min-height: 120px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &__text {
+
+        &__title {
+            font-family: var(--font-old-standard);
+            font-size: 1.5rem;
+        }
+
+        &__description {
+            font-family: var(--font-roboto);
+            font-size: 0.8rem;
+            line-height: 1.5rem;
+            margin-top: 12px;
+        }
+    }
+
+    &:hover &__text__title,
+    &:hover &__text__description {
+        color: var(--white-color);
+    }
+
+    &__arrow {
+        display: none;
+    }
+
+    &:hover &__arrow {
+        display: inline-block;
+    }
+}

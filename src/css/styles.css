@@ -353,6 +353,42 @@
   color: var(--white-color);
 }
 
+.food {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  transition: all 0.3s;
+}
+.food:hover {
+  background-color: var(--dark-color);
+}
+.food__img {
+  min-width: 120px;
+  min-height: 120px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.food__text__title {
+  font-family: var(--font-old-standard);
+  font-size: 1.5rem;
+}
+.food__text__description {
+  font-family: var(--font-roboto);
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  margin-top: 12px;
+}
+.food:hover .food__text__title, .food:hover .food__text__description {
+  color: var(--white-color);
+}
+.food__arrow {
+  display: none;
+}
+.food:hover .food__arrow {
+  display: inline-block;
+}
+
 .statistics {
   display: block;
   background-color: var(--dark-color);
@@ -928,6 +964,71 @@
     display: grid;
   }
   .swiper-feature {
+    display: none;
+  }
+}
+.foods-menu {
+  position: relative;
+  padding: 0px 20px;
+}
+.foods-menu__img {
+  position: absolute;
+  width: 115px;
+  right: -30px;
+}
+.foods-menu__subtitle {
+  font-family: var(--font-archivo);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--dark-color-terciary);
+  padding-top: 115px;
+}
+.foods-menu__title {
+  font-family: var(--font-old-standard);
+  font-size: 3.5rem;
+  margin: 30px 0;
+}
+.foods-menu__grid {
+  display: none;
+}
+.foods-menu .swiper-food__column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.foods-menu .swiper-food__buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 25px;
+  position: relative;
+  justify-content: flex-end;
+}
+.foods-menu .swiper-food__prev-element, .foods-menu .swiper-food__next-element {
+  user-select: none;
+  display: flex;
+  width: 36px;
+  height: 36px;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  background-color: var(--white-color);
+  font-family: var(--font-old-standard);
+  font-weight: 700;
+  cursor: pointer;
+}
+.foods-menu .swiper-food__prev-element:hover, .foods-menu .swiper-food__next-element:hover {
+  background-color: var(--golden-color);
+  color: var(--white-color);
+}
+.foods-menu .swiper-food__prev-element {
+  transform: rotate(180deg);
+}
+
+@media only screen and (min-width: 1000px) {
+  .foods-menu__grid {
+    display: block;
+  }
+  .swiper-food {
     display: none;
   }
 }

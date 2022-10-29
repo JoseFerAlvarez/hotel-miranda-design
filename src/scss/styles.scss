@@ -3,6 +3,7 @@
 @use "./logo";
 @use "./room";
 @use "./feature";
+@use "./food";
 @use "./statistics";
 @use "./topbar";
 @use "./footer";
@@ -12,6 +13,7 @@
 @use "./room-slider";
 @use "./home_video";
 @use "./home-feature";
+@use "./home-food";
 
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Old+Standard+TT&family=Roboto:wght@400;700&display=swap');
 
