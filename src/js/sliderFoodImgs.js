@@ -7,7 +7,7 @@ const swiper = new Swiper(".swiper-food__images", {
         delay: 4000,
     },
     pagination: {
-        el: '.swipper-food__pagination',
+        el: '.swiper-food__pagination',
         type: 'bullets',
     },
 });

@@ -744,6 +744,7 @@
   margin: auto;
   height: 300px;
   width: 270px;
+  object-fit: cover;
 }
 .about-data__card__description {
   position: relative;
@@ -1058,7 +1059,7 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-.foods-menu .swipper-food__pagination {
+.foods-menu .swiper-food__pagination {
   display: flex;
   justify-content: center;
   margin-top: 20px;
