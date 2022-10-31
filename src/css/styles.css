@@ -12,6 +12,29 @@
   color: #111111;
 }
 
+.text-roboto {
+  font-family: var(--font-roboto);
+  font-size: 0.8rem;
+  color: #111111;
+  line-height: 1.5rem;
+}
+.text-roboto--grey {
+  color: var(--dark-color-terciary);
+}
+.text-roboto--white {
+  color: var(--white-color);
+}
+
+.text-archivo {
+  font-family: var(--font-archivo);
+  font-size: 0.8rem;
+  color: var(--dark-color-terciary);
+  line-height: 1.5rem;
+}
+.text-archivo--white {
+  color: var(--white-color);
+}
+
 @media only screen and (min-width: 1000px) {
   .title {
     font-size: 5rem;
@@ -242,12 +265,7 @@
   margin: 15px 0;
 }
 .room__data__text__description {
-  font-family: var(--font-roboto);
-  font-weight: 400;
-  font-size: 0.8rem;
   text-align: center;
-  color: var(--dark-color-terciary);
-  line-height: 1.5rem;
 }
 .room__data__text__description--grid {
   margin-bottom: 5px;
@@ -362,14 +380,6 @@
 .feature__title--dark {
   color: var(--white-color);
 }
-.feature__description {
-  font-family: var(--font-archivo);
-  color: var(--dark-color-terciary);
-  line-height: 1.5rem;
-}
-.feature__description--dark {
-  color: var(--white-color);
-}
 
 .food {
   display: flex;
@@ -392,9 +402,6 @@
   font-size: 1.5rem;
 }
 .food__text__description {
-  font-family: var(--font-roboto);
-  font-size: 0.8rem;
-  line-height: 1.5rem;
   margin-top: 12px;
 }
 .food:hover .food__text__title, .food:hover .food__text__description {
@@ -718,13 +725,6 @@
   margin: 16px 0;
   overflow-wrap: break-word;
 }
-.about-data__discover__description {
-  font-family: var(--font-archivo);
-  font-weight: 400;
-  font-size: 0.8rem;
-  color: var(--dark-color-terciary);
-  line-height: 1.5rem;
-}
 .about-data__discover__button {
   margin: 24px 0;
 }
@@ -761,14 +761,7 @@
   color: var(--white-color);
 }
 .about-data__card__description__text {
-  font-family: var(--font-roboto);
-  font-weight: 400;
-  font-size: 0.8rem;
-  line-height: 1.37rem;
   text-align: center;
-}
-.about-data__card__description__text--white {
-  color: var(--white-color);
 }
 .about-data__card__description__background {
   position: absolute;
@@ -880,9 +873,6 @@
   margin: 16px 0;
 }
 .home-video__text__description {
-  font-family: var(--font-archivo);
-  font-size: 0.8rem;
-  line-height: 1.5rem;
   color: #C2C2C2;
 }
 .home-video__button--desktop {
