@@ -989,7 +989,9 @@
   margin: 30px 0;
 }
 .foods-menu__grid {
-  display: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
 }
 .foods-menu .swiper-food__column {
   display: flex;
@@ -1023,13 +1025,92 @@
 .foods-menu .swiper-food__prev-element {
   transform: rotate(180deg);
 }
+.foods-menu .swiper-food__grid {
+  display: none;
+}
+.foods-menu .swiper-food__grid__buttons {
+  position: absolute;
+  display: flex;
+  right: 20%;
+  top: 150px;
+  gap: 35px;
+}
+.foods-menu .swiper-food__grid__prev-element, .foods-menu .swiper-food__grid__next-element {
+  user-select: none;
+  display: flex;
+  width: 70px;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  background-color: var(--white-color);
+  font-family: var(--font-old-standard);
+  font-weight: 700;
+  cursor: pointer;
+}
+.foods-menu .swiper-food__grid__prev-element:hover, .foods-menu .swiper-food__grid__next-element:hover {
+  background-color: var(--golden-color);
+  color: var(--white-color);
+}
+.foods-menu .swiper-food__grid__prev-element {
+  transform: rotate(180deg);
+}
+.foods-menu .swiper-food__images {
+  margin: 60px 20px 90px 20px;
+}
+.foods-menu .swiper-food__images .food-slide__img {
+  min-height: 335px;
+  min-width: 90%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.foods-menu .swipper-food__pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.foods-menu .swiper-pagination-bullet-active {
+  background: var(--golden-color);
+}
+.foods-menu .food-list__img {
+  display: none;
+  gap: 30px;
+  width: 100%;
+  margin: 120px 0;
+}
+.foods-menu .food-list__img__img {
+  min-height: 335px;
+  width: 33%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 @media only screen and (min-width: 1000px) {
-  .foods-menu__grid {
-    display: block;
+  .foods-menu {
+    padding: 0 20%;
   }
-  .swiper-food {
+  .foods-menu__img {
+    position: absolute;
+    width: 230px;
+    left: 80px;
+  }
+  .foods-menu__subtitle {
+    padding-top: 180px;
+  }
+  .foods-menu .swiper-food {
     display: none;
+  }
+  .foods-menu .swiper-food__grid {
+    display: block;
+    overflow: hidden;
+  }
+  .foods-menu .swiper-food__images {
+    display: none;
+  }
+  .foods-menu .food-list__img {
+    display: flex;
   }
 }
 :root {
