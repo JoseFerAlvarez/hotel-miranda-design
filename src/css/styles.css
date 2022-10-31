@@ -1,4 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Old+Standard+TT&family=Roboto:wght@400;700&display=swap");
+.subtitle {
+  font-family: var(--font-archivo);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--dark-color-terciary);
+}
+
+.title {
+  font-family: var(--font-old-standard);
+  font-size: 3.5rem;
+  color: #111111;
+}
+
+@media only screen and (min-width: 1000px) {
+  .title {
+    font-size: 5rem;
+  }
+}
 .button {
   min-width: 215px;
   min-height: 60px;
@@ -624,15 +642,9 @@
   padding: 150px 20px 75px 20px;
 }
 .header__text__description {
-  font-family: var(--font-archivo);
-  font-weight: 700;
-  font-size: 0.8;
   color: var(--white-color);
 }
 .header__text__title {
-  font-family: var(--font-old-standard);
-  font-weight: 400;
-  font-size: 3.5rem;
   color: var(--white-color);
   margin: 40px 0;
 }
@@ -700,17 +712,9 @@
   display: block;
 }
 .about-data__discover__subtitle {
-  font-family: var(--font-archivo);
-  font-weight: 700;
-  font-size: 0.8rem;
-  color: var(--dark-color-terciary);
   margin: 8px 0;
 }
 .about-data__discover__title {
-  font-family: var(--font-old-standard);
-  font-weight: 400;
-  font-size: 3.5rem;
-  color: #111111;
   margin: 16px 0;
   overflow-wrap: break-word;
 }
@@ -818,15 +822,7 @@
   display: block;
   text-align: center;
 }
-.room-slider__subtitle {
-  font-family: var(--font-archivo);
-  font-weight: 700;
-  font-size: 0.8rem;
-  color: var(--dark-color-terciary);
-}
 .room-slider__title {
-  font-family: var(--font-old-standard);
-  font-size: 3.5rem;
   margin: 20px 0;
 }
 
@@ -876,15 +872,10 @@
   padding: 50px 20px;
 }
 .home-video__text__subtitle {
-  font-family: var(--font-archivo);
-  font-weight: 700;
-  font-size: 0.8rem;
   color: var(--golden-color);
   margin: 16px 0;
 }
 .home-video__text__title {
-  font-family: var(--font-old-standard);
-  font-size: 3.5rem;
   color: var(--white-color);
   margin: 16px 0;
 }
@@ -940,16 +931,10 @@
   }
 }
 .core-features__subtitle {
-  font-family: var(--font-archivo);
-  font-weight: 700;
-  font-size: 0.8rem;
-  color: var(--dark-color-terciary);
   text-align: center;
   margin-top: 60px;
 }
 .core-features__title {
-  font-family: var(--font-old-standard);
-  font-size: 3.5rem;
   text-align: center;
   margin: 24px 0 32px 0;
 }
@@ -991,15 +976,9 @@
   right: -30px;
 }
 .foods-menu__subtitle {
-  font-family: var(--font-archivo);
-  font-weight: 700;
-  font-size: 0.8rem;
-  color: var(--dark-color-terciary);
   padding-top: 115px;
 }
 .foods-menu__title {
-  font-family: var(--font-old-standard);
-  font-size: 3.5rem;
   margin: 30px 0;
 }
 .foods-menu__grid {

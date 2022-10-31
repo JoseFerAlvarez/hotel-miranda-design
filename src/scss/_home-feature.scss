@@ -1,16 +1,10 @@
 .core-features {
     &__subtitle {
-        font-family: var(--font-archivo);
-        font-weight: 700;
-        font-size: 0.8rem;
-        color: var(--dark-color-terciary);
         text-align: center;
         margin-top: 60px;
     }
 
     &__title {
-        font-family: var(--font-old-standard);
-        font-size: 3.5rem;
         text-align: center;
         margin: 24px 0 32px 0;
     }
