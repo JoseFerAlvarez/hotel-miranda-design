@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link href="src/css/styles.css" rel="stylesheet">
     <title>Document</title>
 </head>
@@ -47,6 +47,8 @@
             </ul>
         </div>
     </nav>
+
+    <div class="header__back"></div>
 
     <header class="header">
         <p class="header__text__description">THE ULTIMATE LUXURY EXPERIENCE</p>
@@ -236,6 +238,10 @@
     </section>
 
     <section class="core-features">
+
+        <p class="core-features__subtitle">FACILITIES</p>
+        <p class="core-features__title">Core Features</p>
+
         <div class="swiper-feature">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -302,12 +308,538 @@
             </div>
             <div class="swipper-feature__pagination"></div>
         </div>
+
+        <div class="core-features__grid">
+            <div class="feature">
+                <img class="feature__img-foreground" src="./src/assets/images/rating.png">
+                <div class="feature__img-background">01</div>
+                <p class="feature__title">Have High Rating</p>
+                <p class="feature__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                    eiusmod
+                    tempor incididunt ut labore et dolore magna..</p>
+            </div>
+            <div class="feature">
+                <img class="feature__img-foreground" src="./src/assets/images/clock.png">
+                <div class="feature__img-background">02</div>
+                <p class="feature__title">Quiet Hours</p>
+                <p class="feature__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                    eiusmod
+                    tempor incididunt ut labore et dolore magna..</p>
+            </div>
+            <div class="feature">
+                <img class="feature__img-foreground" src="./src/assets/icons/location.svg">
+                <div class="feature__img-background">03</div>
+                <p class="feature__title">Best Locations</p>
+                <p class="feature__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                    eiusmod
+                    tempor incididunt ut labore et dolore magna..</p>
+            </div>
+            <div class="feature">
+                <img class="feature__img-foreground" src="./src/assets/images/clock-cancel.png">
+                <div class="feature__img-background">04</div>
+                <p class="feature__title">Free Cancellation</p>
+                <p class="feature__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                    eiusmod
+                    tempor incididunt ut labore et dolore magna..</p>
+            </div>
+            <div class="feature">
+                <img class="feature__img-foreground" src="./src/assets/icons/payment.svg">
+                <div class="feature__img-background">05</div>
+                <p class="feature__title">Payment Options</p>
+                <p class="feature__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                    eiusmod
+                    tempor incididunt ut labore et dolore magna..</p>
+            </div>
+            <div class="feature">
+                <img class="feature__img-foreground" src="./src/assets/icons/offer.svg">
+                <div class="feature__img-background">06</div>
+                <p class="feature__title">Special Offers</p>
+                <p class="feature__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                    eiusmod
+                    tempor incididunt ut labore et dolore magna..</p>
+            </div>
+        </div>
     </section>
+
+    <section class="foods-menu">
+
+        <img class="foods-menu__img" src="./src/assets/images/donut.png">
+        <p class="foods-menu__subtitle">MENU</p>
+        <p class="foods-menu__title">Our Foods Menu</p>
+
+        <div class="swiper-food">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="swiper-food__column">
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/eggs-bacon.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Eggs & Bacon</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/coffe.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Tea or Coffee</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/chia.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Chia Oatmeal</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="swiper-food__column">
+
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/fruit.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Fruit Parfait</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/marmalade.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Marmalade Selection</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/cheese.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Cheese Plate</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="swiper-food__column">
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/spaguetti.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Spaguetti</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/paella.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Paella</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/gazpacho.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Gazpacho</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="swiper-food__column">
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/sandwich.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Sandwich</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/morteruelo.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Morteruelo</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/arepa.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Arepas</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-food__buttons">
+                <div class="swiper-food__prev-element">></div>
+                <div class="swiper-food__next-element">></div>
+            </div>
+
+        </div>
+
+        <div class="swiper-food__grid">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="foods-menu__grid">
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/eggs-bacon.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Eggs & Bacon</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/coffe.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Tea or Coffee</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/chia.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Chia Oatmeal</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/fruit.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Fruit Parfait</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/marmalade.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Marmalade Selection</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/cheese.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Cheese Plate</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="foods-menu__grid">
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/spaguetti.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Spaguetti</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/paella.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Paella</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/gazpacho.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Gazpacho</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/sandwich.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Sandwich</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/morteruelo.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Morteruelo</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+
+                        <div class="food">
+                            <div class="food__img" style="background-image: url('./src/assets/images/arepa.jpg')">
+                            </div>
+                            <div class="food__text">
+                                <p class="food__text__title">Arepas</p>
+                                <p class="food__text__description">Lorem ipsum dolor sit amet, consectetur adip isicing
+                                    elit, sed do
+                                    eiusmod tempor.</p>
+                            </div>
+                            <img class="food__arrow" src="./src/assets/icons/arrow.svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-food__grid__buttons">
+                <div class="swiper-food__grid__prev-element">></div>
+                <div class="swiper-food__grid__next-element">></div>
+            </div>
+        </div>
+
+        <div class="swiper-food__images">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="food-slide__img" style="background-image: url('./src/assets/images/paella.jpg')"></div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="food-slide__img" style="background-image: url('./src/assets/images/morteruelo.jpg')">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="food-slide__img" style="background-image: url('./src/assets/images/gazpacho.jpg')">
+                    </div>
+                </div>
+            </div>
+            <div class="swipper-food__pagination"></div>
+        </div>
+
+        <div class="food-list__img">
+            <div class="food-list__img__img" style="background-image: url('./src/assets/images/paella.jpg')"></div>
+            <div class="food-list__img__img" style="background-image: url('./src/assets/images/morteruelo.jpg')">
+            </div>
+            <div class="food-list__img__img" style="background-image: url('./src/assets/images/gazpacho.jpg')">
+            </div>
+        </div>
+
+    </section>
+
+    <section class="statistics">
+        <div class="statistics__stat">
+            <img class="statistics__stat__img" src="./src/assets/images/rocket.png">
+            <p class="statistics__text statistics__stat__number">84k</p>
+            <p class="statistics__text statistics__stat__text">Projects are Completed</p>
+        </div>
+        <div class="statistics__stat">
+            <img class="statistics__stat__img" src="./src/assets/images/users.png">
+            <p class="statistics__text statistics__stat__number">10M</p>
+            <p class="statistics__text statistics__stat__text">Active Backers Around World</p>
+        </div>
+        <div class="statistics__stat">
+            <img class="statistics__stat__img" src="./src/assets/images/stats.png">
+            <p class="statistics__text statistics__stat__number">02k</p>
+            <p class="statistics__text statistics__stat__text">Categories Served</p>
+        </div>
+        <div class="statistics__stat">
+            <img class="statistics__stat__img" src="./src/assets/images/book.png">
+            <p class="statistics__text statistics__stat__number">100M</p>
+            <p class="statistics__text statistics__stat__text">Idea Raised Funds</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__description">
+                <div class="logo logo--golden">
+                    <div class="logo__back logo--golden__back">
+                        <p class="logo__letter logo--golden__letter">H</p>
+                    </div>
+                    <img class="logo--golden__wordmark" src="./src/assets/icons/wordmark.svg">
+                </div>
+                <p class="footer__description__text">Lorem ipsum dolor sit amet, consect etur adipisicing elit, sed
+                    doing
+                    eius mod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat ion ullamco laboris nisi.
+                </p>
+                <div class="footer__description__social-media">
+                    <a href="#" class="social-media-link"><img class="social-media-link__icon"
+                            src="./src/assets/icons/facebook.svg"></a>
+                    <a href="#" class="social-media-link"><img class="social-media-link__icon"
+                            src="./src/assets/icons/twitter.svg"></a>
+                    <a href="#" class="social-media-link"><img class="social-media-link__icon"
+                            src="./src/assets/icons/behance.svg"></a>
+                    <a href="#" class="social-media-link"><img class="social-media-link__icon"
+                            src="./src/assets/icons/linkedin.svg"></a>
+                    <a href="#" class="social-media-link"><img class="social-media-link__icon"
+                            src="./src/assets/icons/youtube.svg"></a>
+                </div>
+            </div>
+
+            <div class="footer__services">
+                <p class="footer__services__title">Services.</p>
+
+                <div class="footer__services__container">
+                    <div class="footer__services__column">
+                        <p class="footer__services__text">+ Resturent & Bar</p>
+                        <p class="footer__services__text">+ Swimming Pool</p>
+                        <p class="footer__services__text">+ Wellness & Spa</p>
+                        <p class="footer__services__text">+ Restaurant</p>
+                        <p class="footer__services__text">+ Conference Room</p>
+                        <p class="footer__services__text">+ Coctail Party House</p>
+                    </div>
+                    <div class="footer__services__column">
+                        <p class="footer__services__text">+ Gaming Zone</p>
+                        <p class="footer__services__text">+ Marrige Party</p>
+                        <p class="footer__services__text">+ Party Planning</p>
+                        <p class="footer__services__text">+ Tour Consultancy</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__contact">
+                <p class="footer__contact__title">Contact us.</p>
+
+                <div class="footer__contact__container">
+                    <img class="footer__contact__img" src="./src/assets/icons/phone.svg">
+                    <div class="footer__contact__data">
+                        <p class="footer__contact__data__title">Phone number</p>
+                        <p class="footer__contact__data__text">+987 876 765 76 577</p>
+                    </div>
+                </div>
+
+                <div class="footer__contact__container">
+                    <img class="footer__contact__img" src="./src/assets/images/hotel-address.png">
+                    <div class="footer__contact__data">
+                        <p class="footer__contact__data__title">Phone number</p>
+                        <p class="footer__contact__data__text">+987 876 765 76 577</p>
+                    </div>
+                </div>
+
+                <div class="footer__contact__container">
+                    <img class="footer__contact__img" src="./src/assets/images/email.png">
+                    <div class="footer__contact__data">
+                        <p class="footer__contact__data__title">Phone number</p>
+                        <p class="footer__contact__data__text">+987 876 765 76 577</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer__copyright">
+            <p class="footer__copyright__copy footer__copyright__text">Copyright By@Example - 2020</p>
+            <div class="footer__copyright__links">
+                <a class="footer__copyright__text footer__copyright__link" href="#">Terms of use</a>
+                <p class="footer__copyright__text">|</p>
+                <a class="footer__copyright__text footer__copyright__link" href="#">Privacy Environmental Policy</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script type="module" src="./src/js/index.js"></script>
     <script type="module" src="./src/js/slider.js"></script>
     <script type="module" src="./src/js/sliderFeature.js"></script>
+    <script type="module" src="./src/js/sliderFood.js"></script>
+    <script type="module" src="./src/js/sliderFoodGrid.js"></script>
+    <script type="module" src="./src/js/sliderFoodImgs.js"></script>
 
 </body>
 
