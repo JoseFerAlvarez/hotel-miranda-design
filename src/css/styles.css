@@ -420,6 +420,7 @@
   .statistics {
     display: flex;
     justify-content: space-around;
+    margin: 120px 15%;
   }
   .statistics__text {
     text-align: start;
@@ -429,7 +430,10 @@
   }
 }
 .topbar {
+  position: fixed;
+  width: 100%;
   display: block;
+  background-color: var(--white-color);
 }
 .topbar__container {
   display: flex;
@@ -479,6 +483,11 @@
 }
 
 @media only screen and (min-width: 1000px) {
+  .topbar {
+    margin: 40px 10% 0 10%;
+    width: 80%;
+    z-index: 2;
+  }
   .topbar__container__images {
     width: 25%;
     max-width: 350px;
@@ -612,7 +621,7 @@
 .header {
   display: block;
   background-color: var(--dark-color-secondary);
-  padding: 75px 20px;
+  padding: 150px 20px 75px 20px;
 }
 .header__text__description {
   font-family: var(--font-archivo);
@@ -634,7 +643,7 @@
 
 @media only screen and (min-width: 1000px) {
   .header {
-    padding: 75px 20%;
+    padding: 180px 20% 75px 20%;
   }
   .header__text__title {
     font-size: 7.5rem;
@@ -643,6 +652,11 @@
   .header__button {
     display: inline-block;
     margin: 0 15px;
+  }
+  .header__back {
+    height: 100px;
+    width: 100%;
+    background-color: var(--dark-color);
   }
 }
 .availability {
