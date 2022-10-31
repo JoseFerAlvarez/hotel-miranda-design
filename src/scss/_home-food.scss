@@ -104,8 +104,11 @@
         margin: 60px 20px 90px 20px;
 
         .food-slide__img {
+            display: block;
+            margin: auto;
             min-height: 335px;
-            min-width: 90%;
+            width: 90%;
+            max-width: 335px;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;

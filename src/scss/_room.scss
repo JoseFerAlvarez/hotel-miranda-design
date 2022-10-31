@@ -1,6 +1,8 @@
 .room {
+    display: block;
+    margin: auto;
     width: 100%;
-    max-width: 770px;
+    max-width: 375px;
     position: relative;
 
     &--grid {
@@ -118,6 +120,9 @@
 
 @media only screen and (min-width: 1000px) {
     .room {
+        display: inline-block;
+        max-width: 770px;
+
         &__rules {
             width: 40%;
             right: 30%;

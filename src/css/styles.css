@@ -205,8 +205,10 @@
   }
 }
 .room {
+  display: block;
+  margin: auto;
   width: 100%;
-  max-width: 770px;
+  max-width: 375px;
   position: relative;
 }
 .room--grid {
@@ -299,6 +301,10 @@
 }
 
 @media only screen and (min-width: 1000px) {
+  .room {
+    display: inline-block;
+    max-width: 770px;
+  }
   .room__rules {
     width: 40%;
     right: 30%;
@@ -409,6 +415,7 @@
 }
 .food__arrow {
   display: none;
+  margin-right: 20px;
 }
 .food:hover .food__arrow {
   display: inline-block;
@@ -459,6 +466,7 @@
   width: 100%;
   display: block;
   background-color: var(--white-color);
+  z-index: 3;
 }
 .topbar__container {
   display: flex;
@@ -511,7 +519,6 @@
   .topbar {
     margin: 40px 10% 0 10%;
     width: 80%;
-    z-index: 2;
   }
   .topbar__container__images {
     width: 25%;
@@ -1042,8 +1049,11 @@
   margin: 60px 20px 90px 20px;
 }
 .foods-menu .swiper-food__images .food-slide__img {
+  display: block;
+  margin: auto;
   min-height: 335px;
-  min-width: 90%;
+  width: 90%;
+  max-width: 335px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
