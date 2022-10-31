@@ -1,5 +1,6 @@
 .header {
     display: block;
+    position: relative;
     background-color: var(--dark-color-secondary);
     padding: 150px 20px 75px 20px;
 
@@ -16,6 +17,27 @@
         display: block;
         margin: 15px 0;
     }
+
+    &__links {
+        position: absolute;
+        display: inline-block;
+        bottom: 0;
+        right: 5%;
+        background-color: var(--white-color);
+        padding: 16px 24px;
+
+        a {
+            font-family: var(--font-archivo);
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            color: var(--dark-color);
+
+            &:hover {
+                color: var(--golden-color);
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -30,6 +52,10 @@
         &__button {
             display: inline-block;
             margin: 0 15px;
+        }
+
+        &__links {
+            right: 15%;
         }
     }
 

@@ -247,7 +247,6 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("../assets/images/hotel.jpg");
 }
 .room__data {
   background-color: var(--white-color);
@@ -652,6 +651,7 @@
 }
 .header {
   display: block;
+  position: relative;
   background-color: var(--dark-color-secondary);
   padding: 150px 20px 75px 20px;
 }
@@ -666,6 +666,24 @@
   display: block;
   margin: 15px 0;
 }
+.header__links {
+  position: absolute;
+  display: inline-block;
+  bottom: 0;
+  right: 5%;
+  background-color: var(--white-color);
+  padding: 16px 24px;
+}
+.header__links a {
+  font-family: var(--font-archivo);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--dark-color);
+}
+.header__links a:hover {
+  color: var(--golden-color);
+}
 
 @media only screen and (min-width: 1000px) {
   .header {
@@ -678,6 +696,9 @@
   .header__button {
     display: inline-block;
     margin: 0 15px;
+  }
+  .header__links {
+    right: 15%;
   }
   .header__back {
     height: 100px;
