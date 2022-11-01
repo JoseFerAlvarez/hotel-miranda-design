@@ -1,0 +1,46 @@
+.restaurant {
+    box-shadow: 0px 14px 24px 0px rgba(184, 184, 184, 0.1);
+    padding: 5%;
+    margin-top: 40px;
+
+    &__img__container {
+        display: block;
+        height: 235px;
+        background-color: var(--dark-color-terciary);
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__subtitle {
+        margin-top: 32px;
+    }
+
+    &__title {
+        font-size: 2.5rem;
+        margin: 26px 0;
+    }
+
+    &__button {
+        margin-top: 16px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .restaurant {
+        display: flex;
+        padding: 3%;
+        gap: 50px;
+
+        &__img__container {
+            min-height: 420px;
+        }
+
+        &__text {
+            width: 65%;
+        }
+    }
+}
