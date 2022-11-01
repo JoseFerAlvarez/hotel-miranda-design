@@ -8,24 +8,16 @@
 
     &__text {
         &__subtitle {
-            font-family: var(--font-archivo);
-            font-weight: 700;
-            font-size: 0.8rem;
             color: var(--golden-color);
             margin: 16px 0;
         }
 
         &__title {
-            font-family: var(--font-old-standard);
-            font-size: 3.5rem;
             color: var(--white-color);
             margin: 16px 0;
         }
 
         &__description {
-            font-family: var(--font-archivo);
-            font-size: 0.8rem;
-            line-height: 1.5rem;
             color: #C2C2C2;
         }
     }

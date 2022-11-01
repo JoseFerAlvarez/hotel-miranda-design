@@ -36,14 +36,4 @@
             color: var(--white-color);
         }
     }
-
-    &__description {
-        font-family: var(--font-archivo);
-        color: var(--dark-color-terciary);
-        line-height: 1.5rem;
-
-        &--dark {
-            color: var(--white-color);
-        }
-    }
 }

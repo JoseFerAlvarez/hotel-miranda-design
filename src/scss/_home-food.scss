@@ -10,16 +10,10 @@
     }
 
     &__subtitle {
-        font-family: var(--font-archivo);
-        font-weight: 700;
-        font-size: 0.8rem;
-        color: var(--dark-color-terciary);
         padding-top: 115px;
     }
 
     &__title {
-        font-family: var(--font-old-standard);
-        font-size: 3.5rem;
         margin: 30px 0;
     }
 
@@ -110,15 +104,18 @@
         margin: 60px 20px 90px 20px;
 
         .food-slide__img {
+            display: block;
+            margin: auto;
             min-height: 335px;
-            min-width: 90%;
+            width: 90%;
+            max-width: 335px;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
         }
     }
 
-    .swipper-food__pagination {
+    .swiper-food__pagination {
         display: flex;
         justify-content: center;
         margin-top: 20px;

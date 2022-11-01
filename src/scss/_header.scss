@@ -1,19 +1,14 @@
 .header {
     display: block;
+    position: relative;
     background-color: var(--dark-color-secondary);
     padding: 150px 20px 75px 20px;
 
     &__text__description {
-        font-family: var(--font-archivo);
-        font-weight: 700;
-        font-size: 0.8;
         color: var(--white-color);
     }
 
     &__text__title {
-        font-family: var(--font-old-standard);
-        font-weight: 400;
-        font-size: 3.5rem;
         color: var(--white-color);
         margin: 40px 0;
     }
@@ -21,6 +16,27 @@
     &__button {
         display: block;
         margin: 15px 0;
+    }
+
+    &__links {
+        position: absolute;
+        display: inline-block;
+        bottom: 0;
+        right: 5%;
+        background-color: var(--white-color);
+        padding: 16px 24px;
+
+        a {
+            font-family: var(--font-archivo);
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            color: var(--dark-color);
+
+            &:hover {
+                color: var(--golden-color);
+            }
+        }
     }
 }
 
@@ -36,6 +52,10 @@
         &__button {
             display: inline-block;
             margin: 0 15px;
+        }
+
+        &__links {
+            right: 15%;
         }
     }
 

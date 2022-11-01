@@ -5,28 +5,12 @@
         display: block;
 
         &__subtitle {
-            font-family: var(--font-archivo);
-            font-weight: 700;
-            font-size: 0.8rem;
-            color: var(--dark-color-terciary);
             margin: 8px 0;
         }
 
         &__title {
-            font-family: var(--font-old-standard);
-            font-weight: 400;
-            font-size: 3.5rem;
-            color: #111111;
             margin: 16px 0;
             overflow-wrap: break-word;
-        }
-
-        &__description {
-            font-family: var(--font-archivo);
-            font-weight: 400;
-            font-size: 0.8rem;
-            color: var(--dark-color-terciary);
-            line-height: 1.5rem;
         }
 
         &__button {
@@ -44,6 +28,7 @@
             margin: auto;
             height: 300px;
             width: 270px;
+            object-fit: cover;
         }
 
         &__description {
@@ -73,15 +58,7 @@
             }
 
             &__text {
-                font-family: var(--font-roboto);
-                font-weight: 400;
-                font-size: 0.8rem;
-                line-height: 1.37rem;
                 text-align: center;
-
-                &--white {
-                    color: var(--white-color);
-                }
             }
 
             &__background {

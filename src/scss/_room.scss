@@ -1,6 +1,8 @@
 .room {
+    display: block;
+    margin: auto;
     width: 100%;
-    max-width: 770px;
+    max-width: 375px;
     position: relative;
 
     &--grid {
@@ -45,7 +47,6 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        background-image: url("../assets/images/hotel.jpg");
     }
 
     &__data {
@@ -70,12 +71,7 @@
             }
 
             &__description {
-                font-family: var(--font-roboto);
-                font-weight: 400;
-                font-size: 0.8rem;
                 text-align: center;
-                color: var(--dark-color-terciary);
-                line-height: 1.5rem;
 
                 &--grid {
                     margin-bottom: 5px;
@@ -123,6 +119,9 @@
 
 @media only screen and (min-width: 1000px) {
     .room {
+        display: inline-block;
+        max-width: 770px;
+
         &__rules {
             width: 40%;
             right: 30%;

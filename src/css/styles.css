@@ -1,4 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Old+Standard+TT&family=Roboto:wght@400;700&display=swap");
+.subtitle {
+  font-family: var(--font-archivo);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--dark-color-terciary);
+}
+
+.title {
+  font-family: var(--font-old-standard);
+  font-size: 3.5rem;
+  color: #111111;
+}
+
+.text-roboto {
+  font-family: var(--font-roboto);
+  font-size: 0.8rem;
+  color: #111111;
+  line-height: 1.5rem;
+}
+.text-roboto--grey {
+  color: var(--dark-color-terciary);
+}
+.text-roboto--white {
+  color: var(--white-color);
+}
+
+.text-archivo {
+  font-family: var(--font-archivo);
+  font-size: 0.8rem;
+  color: var(--dark-color-terciary);
+  line-height: 1.5rem;
+}
+.text-archivo--white {
+  color: var(--white-color);
+}
+
+@media only screen and (min-width: 1000px) {
+  .title {
+    font-size: 5rem;
+  }
+}
 .button {
   min-width: 215px;
   min-height: 60px;
@@ -164,8 +205,10 @@
   }
 }
 .room {
+  display: block;
+  margin: auto;
   width: 100%;
-  max-width: 770px;
+  max-width: 375px;
   position: relative;
 }
 .room--grid {
@@ -204,7 +247,6 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("../assets/images/hotel.jpg");
 }
 .room__data {
   background-color: var(--white-color);
@@ -224,12 +266,7 @@
   margin: 15px 0;
 }
 .room__data__text__description {
-  font-family: var(--font-roboto);
-  font-weight: 400;
-  font-size: 0.8rem;
   text-align: center;
-  color: var(--dark-color-terciary);
-  line-height: 1.5rem;
 }
 .room__data__text__description--grid {
   margin-bottom: 5px;
@@ -263,6 +300,10 @@
 }
 
 @media only screen and (min-width: 1000px) {
+  .room {
+    display: inline-block;
+    max-width: 770px;
+  }
   .room__rules {
     width: 40%;
     right: 30%;
@@ -344,14 +385,6 @@
 .feature__title--dark {
   color: var(--white-color);
 }
-.feature__description {
-  font-family: var(--font-archivo);
-  color: var(--dark-color-terciary);
-  line-height: 1.5rem;
-}
-.feature__description--dark {
-  color: var(--white-color);
-}
 
 .food {
   display: flex;
@@ -374,9 +407,6 @@
   font-size: 1.5rem;
 }
 .food__text__description {
-  font-family: var(--font-roboto);
-  font-size: 0.8rem;
-  line-height: 1.5rem;
   margin-top: 12px;
 }
 .food:hover .food__text__title, .food:hover .food__text__description {
@@ -384,11 +414,51 @@
 }
 .food__arrow {
   display: none;
+  margin-right: 20px;
 }
 .food:hover .food__arrow {
   display: inline-block;
 }
 
+.restaurant {
+  box-shadow: 0px 14px 24px 0px rgba(184, 184, 184, 0.1);
+  padding: 5%;
+  margin-top: 40px;
+}
+.restaurant__img__container {
+  display: block;
+  height: 235px;
+  background-color: var(--dark-color-terciary);
+}
+.restaurant__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.restaurant__subtitle {
+  margin-top: 32px;
+}
+.restaurant__title {
+  font-size: 2.5rem;
+  margin: 26px 0;
+}
+.restaurant__button {
+  margin-top: 16px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .restaurant {
+    display: flex;
+    padding: 3%;
+    gap: 50px;
+  }
+  .restaurant__img__container {
+    min-height: 420px;
+  }
+  .restaurant__text {
+    width: 65%;
+  }
+}
 .statistics {
   display: block;
   background-color: var(--dark-color);
@@ -434,6 +504,7 @@
   width: 100%;
   display: block;
   background-color: var(--white-color);
+  z-index: 3;
 }
 .topbar__container {
   display: flex;
@@ -486,7 +557,6 @@
   .topbar {
     margin: 40px 10% 0 10%;
     width: 80%;
-    z-index: 2;
   }
   .topbar__container__images {
     width: 25%;
@@ -620,25 +690,38 @@
 }
 .header {
   display: block;
+  position: relative;
   background-color: var(--dark-color-secondary);
   padding: 150px 20px 75px 20px;
 }
 .header__text__description {
-  font-family: var(--font-archivo);
-  font-weight: 700;
-  font-size: 0.8;
   color: var(--white-color);
 }
 .header__text__title {
-  font-family: var(--font-old-standard);
-  font-weight: 400;
-  font-size: 3.5rem;
   color: var(--white-color);
   margin: 40px 0;
 }
 .header__button {
   display: block;
   margin: 15px 0;
+}
+.header__links {
+  position: absolute;
+  display: inline-block;
+  bottom: 0;
+  right: 5%;
+  background-color: var(--white-color);
+  padding: 16px 24px;
+}
+.header__links a {
+  font-family: var(--font-archivo);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--dark-color);
+}
+.header__links a:hover {
+  color: var(--golden-color);
 }
 
 @media only screen and (min-width: 1000px) {
@@ -652,6 +735,9 @@
   .header__button {
     display: inline-block;
     margin: 0 15px;
+  }
+  .header__links {
+    right: 15%;
   }
   .header__back {
     height: 100px;
@@ -700,26 +786,11 @@
   display: block;
 }
 .about-data__discover__subtitle {
-  font-family: var(--font-archivo);
-  font-weight: 700;
-  font-size: 0.8rem;
-  color: var(--dark-color-terciary);
   margin: 8px 0;
 }
 .about-data__discover__title {
-  font-family: var(--font-old-standard);
-  font-weight: 400;
-  font-size: 3.5rem;
-  color: #111111;
   margin: 16px 0;
   overflow-wrap: break-word;
-}
-.about-data__discover__description {
-  font-family: var(--font-archivo);
-  font-weight: 400;
-  font-size: 0.8rem;
-  color: var(--dark-color-terciary);
-  line-height: 1.5rem;
 }
 .about-data__discover__button {
   margin: 24px 0;
@@ -733,6 +804,7 @@
   margin: auto;
   height: 300px;
   width: 270px;
+  object-fit: cover;
 }
 .about-data__card__description {
   position: relative;
@@ -757,14 +829,7 @@
   color: var(--white-color);
 }
 .about-data__card__description__text {
-  font-family: var(--font-roboto);
-  font-weight: 400;
-  font-size: 0.8rem;
-  line-height: 1.37rem;
   text-align: center;
-}
-.about-data__card__description__text--white {
-  color: var(--white-color);
 }
 .about-data__card__description__background {
   position: absolute;
@@ -818,15 +883,7 @@
   display: block;
   text-align: center;
 }
-.room-slider__subtitle {
-  font-family: var(--font-archivo);
-  font-weight: 700;
-  font-size: 0.8rem;
-  color: var(--dark-color-terciary);
-}
 .room-slider__title {
-  font-family: var(--font-old-standard);
-  font-size: 3.5rem;
   margin: 20px 0;
 }
 
@@ -876,22 +933,14 @@
   padding: 50px 20px;
 }
 .home-video__text__subtitle {
-  font-family: var(--font-archivo);
-  font-weight: 700;
-  font-size: 0.8rem;
   color: var(--golden-color);
   margin: 16px 0;
 }
 .home-video__text__title {
-  font-family: var(--font-old-standard);
-  font-size: 3.5rem;
   color: var(--white-color);
   margin: 16px 0;
 }
 .home-video__text__description {
-  font-family: var(--font-archivo);
-  font-size: 0.8rem;
-  line-height: 1.5rem;
   color: #C2C2C2;
 }
 .home-video__button--desktop {
@@ -940,16 +989,10 @@
   }
 }
 .core-features__subtitle {
-  font-family: var(--font-archivo);
-  font-weight: 700;
-  font-size: 0.8rem;
-  color: var(--dark-color-terciary);
   text-align: center;
   margin-top: 60px;
 }
 .core-features__title {
-  font-family: var(--font-old-standard);
-  font-size: 3.5rem;
   text-align: center;
   margin: 24px 0 32px 0;
 }
@@ -991,15 +1034,9 @@
   right: -30px;
 }
 .foods-menu__subtitle {
-  font-family: var(--font-archivo);
-  font-weight: 700;
-  font-size: 0.8rem;
-  color: var(--dark-color-terciary);
   padding-top: 115px;
 }
 .foods-menu__title {
-  font-family: var(--font-old-standard);
-  font-size: 3.5rem;
   margin: 30px 0;
 }
 .foods-menu__grid {
@@ -1073,13 +1110,16 @@
   margin: 60px 20px 90px 20px;
 }
 .foods-menu .swiper-food__images .food-slide__img {
+  display: block;
+  margin: auto;
   min-height: 335px;
-  min-width: 90%;
+  width: 90%;
+  max-width: 335px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
-.foods-menu .swipper-food__pagination {
+.foods-menu .swiper-food__pagination {
   display: flex;
   justify-content: center;
   margin-top: 20px;
@@ -1124,6 +1164,91 @@
     display: none;
   }
   .foods-menu .food-list__img {
+    display: flex;
+  }
+}
+.about-us__description {
+  margin: 60px 5%;
+}
+.about-us__description__video__container {
+  width: 100%;
+  height: 10%;
+}
+.about-us__description__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-us__description__text {
+  font-family: var(--font-old-standard);
+  font-size: 2rem;
+  text-align: center;
+  line-height: 2.4rem;
+  margin: 35px 0;
+}
+.about-us__description__advantages {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.about-us__description__advantage {
+  min-width: 160px;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.about-us__description__advantage__img {
+  width: 50px;
+}
+.about-us__description__advantage__img__plane {
+  filter: invert(0.45) sepia(1);
+}
+.about-us__description__advantage__text {
+  font-family: var(--font-archivo);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-align: center;
+  letter-spacing: 2.4px;
+}
+.about-us__description__advantage:hover {
+  background-color: var(--golden-color);
+}
+.about-us__description__advantage:hover .about-us__description__advantage__text {
+  color: var(--white-color);
+}
+.about-us__description__advantage:hover .about-us__description__advantage__img {
+  filter: brightness(2);
+}
+.about-us__description__advantage__barbecue {
+  display: none;
+}
+
+@media only screen and (min-width: 1000px) {
+  .about-us__description {
+    margin: 120px 19%;
+  }
+  .about-us__description__video {
+    max-height: 650px;
+  }
+  .about-us__description__text {
+    font-size: 4.5rem;
+    line-height: 5.5rem;
+    margin: 60px 0;
+  }
+  .about-us__description__advantages {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 42px;
+  }
+  .about-us__description__advantage {
+    min-width: 200px;
+    min-height: 200px;
+  }
+  .about-us__description__advantage__barbecue {
     display: flex;
   }
 }
