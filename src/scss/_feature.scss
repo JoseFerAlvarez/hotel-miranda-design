@@ -3,8 +3,9 @@
     width: 100%;
     min-height: 350px;
     padding: 35px;
+    z-index: 0;
 
-    &--dark {
+    &--black {
         background-color: #292929;
     }
 
@@ -20,9 +21,10 @@
         font-size: 7.5rem;
         font-weight: 700;
         color: #2222220A;
+        z-index: -1;
 
-        &--dark {
-            color: #222222;
+        &--black {
+            color: var(--dark-color);
         }
     }
 
@@ -32,7 +34,7 @@
         color: var(--dark-color);
         margin-bottom: 25px;
 
-        &--dark {
+        &--white {
             color: var(--white-color);
         }
     }

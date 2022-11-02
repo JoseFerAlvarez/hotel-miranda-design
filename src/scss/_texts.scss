@@ -3,12 +3,20 @@
     font-weight: 700;
     font-size: 0.8rem;
     color: var(--dark-color-terciary);
+
+    &--white {
+        color: var(--white-color);
+    }
 }
 
 .title {
     font-family: var(--font-old-standard);
     font-size: 3.5rem;
     color: #111111;
+
+    &--white {
+        color: var(--white-color);
+    }
 }
 
 .text-roboto {
