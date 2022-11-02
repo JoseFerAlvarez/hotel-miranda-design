@@ -1,0 +1,50 @@
+.room-amenities {
+    padding: 50px 5%;
+
+    &__title {
+        font-size: 1.9rem;
+        margin-bottom: 10px;
+    }
+
+    hr {
+        border: 1px solid #F1F1F1;
+    }
+
+    &__services {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin: 35px 0;
+    }
+
+    &__service {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        &__text {
+            font-family: var(--font-roboto);
+            font-weight: 500;
+            color: var(--dark-color-terciary);
+        }
+
+        &__image {
+            width: 16px;
+
+            &__wifi {
+                filter: invert(0.6) sepia(1);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .room-amenities {
+        padding: 50px 19%;
+        width: 75%;
+
+        &__services {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
