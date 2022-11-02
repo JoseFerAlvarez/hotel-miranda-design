@@ -1,0 +1,19 @@
+.room-list {
+    padding: 48px 5%;
+}
+
+@media only screen and (min-width: 1000px) {
+    .room-list {
+        padding: 48px 5%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+
+        &--list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 48px 19%;
+        }
+    }
+}

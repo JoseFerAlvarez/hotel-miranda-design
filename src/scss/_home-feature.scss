@@ -1,4 +1,11 @@
 .core-features {
+
+    padding: 50px 0;
+
+    &--dark {
+        background-color: var(--dark-color);
+    }
+
     &__subtitle {
         text-align: center;
         margin-top: 60px;
@@ -32,6 +39,8 @@
 
 @media only screen and (min-width: 1000px) {
     .core-features {
+        padding: 110px 0;
+
         &__grid {
             display: grid;
         }
