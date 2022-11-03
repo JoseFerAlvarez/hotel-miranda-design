@@ -1,0 +1,89 @@
+.room-offers {
+    padding: 5%;
+}
+
+.room-popular {
+    background-color: var(--dark-color);
+    padding: 5%;
+    position: relative;
+    margin: 60px 0;
+
+
+
+    &__subtitle,
+    &__title {
+        text-align: center;
+    }
+
+    &__subtitle {
+        margin-top: 48px;
+    }
+
+    &__title {
+        font-size: 40px;
+        margin: 25px 0 48px 0;
+    }
+
+    .swiper-room-popular {
+        display: block;
+    }
+
+    &__swiper__prev-element,
+    &__swiper__next-element {
+        user-select: none;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 45%;
+        width: 32px;
+        height: 32px;
+        z-index: 2;
+        background-color: var(--white-color);
+        font-family: var(--font-old-standard);
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--golden-color);
+            color: var(--white-color);
+        }
+    }
+
+    &__swiper__next-element {
+        right: 10px;
+        left: auto;
+    }
+
+    &__swiper__prev-element {
+        left: 10px;
+        right: auto;
+        transform: rotate(180deg);
+    }
+
+    &__list {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .room-offers {
+        display: flex;
+        flex-direction: column;
+        gap: 300px;
+        padding: 120px 19% 200px 19%;
+    }
+
+    .room-popular {
+        padding: 60px 19% 120px 19%;
+
+        .swiper-room-popular {
+            display: none;
+        }
+
+        &__list {
+            display: flex;
+            gap: 30px;
+        }
+    }
+}

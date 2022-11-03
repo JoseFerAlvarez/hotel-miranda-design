@@ -3,6 +3,7 @@
 @use "./inputs";
 @use "./logo";
 @use "./room";
+@use "./room-discount";
 @use "./feature";
 @use "./food";
 @use "./about-us-restaurant";
@@ -24,6 +25,7 @@
 @use "./room-founder";
 @use "./room-cancellation";
 @use "./room-related";
+@use "./room-offers";
 
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Old+Standard+TT&family=Roboto:wght@400;700&display=swap');
 
