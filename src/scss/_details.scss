@@ -1,5 +1,5 @@
 .details {
-    padding: 0 5%;
+    padding: 60px 5%;
 
     &__data {
         display: flex;
@@ -33,11 +33,31 @@
         object-fit: cover;
         margin: 60px 0;
     }
+
+    &__inputs {
+        &__user {
+            filter: invert(0.6) sepia(1);
+        }
+
+        textarea {
+            height: 175px;
+            resize: none;
+        }
+
+        button {
+            display: block;
+            margin: 50px auto 0 auto;
+        }
+    }
+
+    &__input {
+        margin-bottom: 16px;
+    }
 }
 
 @media only screen and (min-width: 1000px) {
     .details {
-        padding: 0 19%;
+        padding: 120px 19%;
 
         &__data__container {
             display: flex;
@@ -47,6 +67,24 @@
 
         &__data {
             min-width: 370px;
+        }
+
+        &__image {
+            height: 700px;
+        }
+
+        &__inputs {
+            margin: 0 100px;
+
+            &__group {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+            }
+
+            textarea {
+                height: 250px;
+            }
         }
     }
 }
