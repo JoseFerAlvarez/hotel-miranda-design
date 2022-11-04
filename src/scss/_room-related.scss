@@ -56,6 +56,10 @@
     .room-related {
         padding: 120px 19%;
 
+        hr {
+            width: 60%;
+        }
+
         &__list {
             display: flex;
         }

@@ -148,7 +148,8 @@
         &__img {
             position: absolute;
             width: 230px;
-            left: 80px;
+            left: 10px;
+            top: -50px;
         }
 
         &__subtitle {
@@ -170,6 +171,18 @@
 
         .food-list__img {
             display: flex;
+        }
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .foods-menu {
+        padding: 0 20%;
+
+        &__img {
+            position: absolute;
+            width: 230px;
+            left: 80px;
         }
     }
 }

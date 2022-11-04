@@ -60,11 +60,19 @@
 .button-golden {
   background-color: var(--golden-color);
   color: var(--white-color);
+  transition: 0.3s background-color;
+}
+.button-golden:hover {
+  background-color: var(--golden-color-secondary);
 }
 .button-dark {
   background-color: var(--dark-color-secondary);
   color: var(--white-color);
   border: 1px solid var(--light-color-secondary);
+  transition: 0.3s background-color;
+}
+.button-dark:hover {
+  background-color: #444444;
 }
 
 .burger__container {
@@ -149,6 +157,9 @@
   font-family: var(--font-archivo);
   color: var(--dark-color-terciary);
 }
+.input__date--filled::-webkit-calendar-picker-indicator {
+  filter: invert(0.6);
+}
 .input--contact {
   display: inline-block;
   position: relative;
@@ -226,6 +237,9 @@
   display: inline-block;
   max-width: 370px;
   height: 440px;
+}
+.room--list {
+  margin: 12px 0;
 }
 .room__container {
   position: relative;
@@ -333,6 +347,9 @@
   .room {
     display: inline-block;
     max-width: 770px;
+  }
+  .room--grid {
+    max-width: 370px;
   }
   .room--list {
     display: flex;
@@ -756,6 +773,7 @@
     display: flex;
     width: 100%;
     gap: 7%;
+    margin: 20px 0 10px 50px;
   }
   .topbar__nav--visible {
     display: none;
@@ -903,7 +921,7 @@
   text-decoration: none;
   color: var(--dark-color);
 }
-.header__links a:hover {
+.header__links a:last-child {
   color: var(--golden-color);
 }
 
@@ -1025,26 +1043,52 @@
 
 @media only screen and (min-width: 1000px) {
   .about-data {
-    display: flex;
-    flex-direction: row-reverse;
+    padding: 150px 19%;
   }
   .about-data__discover {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    width: 30%;
-    margin-left: 5%;
-    margin-right: 15%;
-  }
-  .about-data__discover__description {
-    width: 70%;
   }
   .about-data__discover__button {
     max-width: 215px;
   }
   .about-data__card__container {
-    width: 50%;
     display: flex;
+    justify-content: center;
+  }
+  .about-data__card {
+    margin: 0;
+  }
+  .about-data__card__img, .about-data__card__description {
+    margin: 15px;
+  }
+  .about-data__card__team {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+  .about-data__card__room {
+    margin-top: 30px;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .about-data {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 50px;
+    padding: 150px 19%;
+  }
+  .about-data__discover {
+    display: flex;
+    width: 45%;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .about-data__discover__button {
+    max-width: 215px;
+  }
+  .about-data__card__container {
+    display: flex;
+    width: 35%;
     justify-content: flex-end;
   }
   .about-data__card {
@@ -1340,7 +1384,8 @@
   .foods-menu__img {
     position: absolute;
     width: 230px;
-    left: 80px;
+    left: 10px;
+    top: -50px;
   }
   .foods-menu__subtitle {
     padding-top: 180px;
@@ -1357,6 +1402,16 @@
   }
   .foods-menu .food-list__img {
     display: flex;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .foods-menu {
+    padding: 0 20%;
+  }
+  .foods-menu__img {
+    position: absolute;
+    width: 230px;
+    left: 80px;
   }
 }
 .about-us__description {
@@ -1507,6 +1562,8 @@
   .about-us__counter__images {
     display: flex;
   }
+}
+@media only screen and (min-width: 1300px) {
   .about-us__counter__feature {
     max-width: 370px;
   }
@@ -1516,10 +1573,12 @@
   }
 }
 .room-list {
+  display: flex;
+  flex-wrap: wrap;
   padding: 48px 5%;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1260px) {
   .room-list {
     padding: 48px 5%;
     display: grid;
@@ -1790,6 +1849,9 @@
 @media only screen and (min-width: 1000px) {
   .room-related {
     padding: 120px 19%;
+  }
+  .room-related hr {
+    width: 60%;
   }
   .room-related__list {
     display: flex;

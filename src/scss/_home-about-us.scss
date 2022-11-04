@@ -75,20 +75,10 @@
 
 @media only screen and (min-width: 1000px) {
     .about-data {
-        display: flex;
-        flex-direction: row-reverse;
+        padding: 150px 19%;
 
         &__discover {
-            display: flex;
-            flex-direction: column;
             justify-content: center;
-            width: 30%;
-            margin-left: 5%;
-            margin-right: 15%;
-
-            &__description {
-                width: 70%;
-            }
 
             &__button {
                 max-width: 215px;
@@ -96,8 +86,52 @@
         }
 
         &__card__container {
-            width: 50%;
             display: flex;
+            justify-content: center;
+        }
+
+        &__card {
+            margin: 0;
+
+            &__img,
+            &__description {
+                margin: 15px;
+            }
+
+            &__team {
+                display: flex;
+                flex-direction: column-reverse;
+                justify-content: flex-end;
+            }
+
+            &__room {
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    .about-data {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 50px;
+        padding: 150px 19%;
+
+        &__discover {
+            display: flex;
+            width: 45%;
+            flex-direction: column;
+            justify-content: center;
+
+            &__button {
+                max-width: 215px;
+            }
+        }
+
+        &__card__container {
+            display: flex;
+            width: 35%;
             justify-content: flex-end;
         }
 

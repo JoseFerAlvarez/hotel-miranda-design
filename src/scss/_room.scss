@@ -11,6 +11,10 @@
         height: 440px;
     }
 
+    &--list {
+        margin: 12px 0;
+    }
+
     &__container {
         position: relative;
         display: block;
@@ -145,6 +149,10 @@
     .room {
         display: inline-block;
         max-width: 770px;
+
+        &--grid {
+            max-width: 370px;
+        }
 
         &--list {
             display: flex;

@@ -74,7 +74,11 @@
         &__images {
             display: flex;
         }
+    }
+}
 
+@media only screen and (min-width: 1300px) {
+    .about-us__counter {
         &__feature {
             max-width: 370px;
 
@@ -82,7 +86,6 @@
                 display: flex;
                 gap: 30px;
             }
-
         }
     }
 }

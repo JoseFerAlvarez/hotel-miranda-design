@@ -1,8 +1,10 @@
 .room-list {
+    display: flex;
+    flex-wrap: wrap;
     padding: 48px 5%;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1260px) {
     .room-list {
         padding: 48px 5%;
         display: grid;

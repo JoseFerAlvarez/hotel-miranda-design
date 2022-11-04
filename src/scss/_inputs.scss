@@ -25,6 +25,10 @@
         background-color: var(--light-color-2);
         font-family: var(--font-archivo);
         color: var(--dark-color-terciary);
+
+        &::-webkit-calendar-picker-indicator {
+            filter: invert(0.6);
+        }
     }
 
     &--contact {

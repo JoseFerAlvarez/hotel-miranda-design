@@ -33,7 +33,7 @@
             text-decoration: none;
             color: var(--dark-color);
 
-            &:hover {
+            &:last-child {
                 color: var(--golden-color);
             }
         }
