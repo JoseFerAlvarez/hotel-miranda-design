@@ -1,0 +1,28 @@
+.room-cancellation {
+    padding: 100px 5%;
+
+    &__title {
+        font-size: 1.87rem;
+        margin-bottom: 10px;
+    }
+
+    &__description {
+        margin-top: 30px;
+    }
+
+    hr {
+        border: 1px solid #F1F1F1;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .room-cancellation {
+        padding: 120px 19%;
+        width: 75%;
+
+        &__title {
+            font-size: 1.87rem;
+            margin-bottom: 10px;
+        }
+    }
+}

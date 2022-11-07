@@ -1,0 +1,41 @@
+.feature {
+    position: relative;
+    width: 100%;
+    min-height: 350px;
+    padding: 35px;
+    z-index: 0;
+
+    &--black {
+        background-color: #292929;
+    }
+
+    &__img-foreground {
+        margin: 40px 0 30px 0;
+    }
+
+    &__img-background {
+        position: absolute;
+        top: 0;
+        right: 30px;
+        font-family: var(--font-archivo);
+        font-size: 7.5rem;
+        font-weight: 700;
+        color: #2222220A;
+        z-index: -1;
+
+        &--black {
+            color: var(--dark-color);
+        }
+    }
+
+    &__title {
+        font-family: var(--font-old-standard);
+        font-size: 1.87rem;
+        color: var(--dark-color);
+        margin-bottom: 25px;
+
+        &--white {
+            color: var(--white-color);
+        }
+    }
+}

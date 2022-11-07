@@ -1,0 +1,255 @@
+.room {
+    display: block;
+    margin: auto;
+    width: 100%;
+    max-width: 375px;
+    position: relative;
+
+    &--grid {
+        display: inline-block;
+        max-width: 370px;
+        height: 440px;
+    }
+
+    &--list {
+        margin: 12px 0;
+    }
+
+    &__container {
+        position: relative;
+        display: block;
+        width: 100%;
+
+        &--grid {
+            display: inline-block;
+            max-width: 370px;
+        }
+    }
+
+    &__rules {
+        display: flex;
+        justify-content: space-around;
+        position: absolute;
+        right: 25%;
+        top: 0;
+        padding: 10px;
+        background-color: var(--white-color);
+        width: 50%;
+        box-shadow: 0px 8px 16px 0px rgba(138, 138, 138, 0.05);
+
+
+        &--grid {
+            width: 80%;
+            right: 10%;
+            top: 90%;
+        }
+
+        &--list {
+            position: absolute;
+            top: 220px;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 240px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    &__data {
+        background-color: var(--white-color);
+        padding: 3%;
+
+        &--grid {
+            position: static;
+        }
+
+        &__text {
+            &__title {
+                font-family: var(--font-old-standard);
+                font-weight: 400;
+                font-size: 1.75rem;
+                text-align: center;
+
+                &--grid {
+                    font-size: 1.5rem;
+                    margin: 15px 0;
+                }
+
+                &--list {
+                    font-size: 1.5rem;
+                    margin: 15px 0;
+                }
+            }
+
+            &__description {
+                text-align: center;
+
+                &--grid {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+
+        &__properties {
+
+            &--grid {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            &--list {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            &__price {
+                font-family: var(--font-archivo);
+                font-weight: 700;
+                font-size: 2rem;
+                text-align: center;
+                color: var(--golden-color);
+
+                &--list {
+                    font-size: 1rem;
+                }
+
+                &--grid {
+                    font-size: 1rem;
+                }
+
+                &__night {
+                    font-size: 0.8rem;
+
+                    &--grid {
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            &__availability {
+                font-family: var(--font-archivo);
+                font-weight: 700;
+                font-size: 1rem;
+                color: #BDBDBD;
+            }
+
+            hr {
+                display: none;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .room {
+        display: inline-block;
+        max-width: 770px;
+
+        &--grid {
+            max-width: 370px;
+        }
+
+        &--list {
+            display: flex;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        &__rules {
+            width: 40%;
+            right: 30%;
+
+            &--grid {
+                width: 80%;
+                right: 10%;
+                top: 90%;
+            }
+
+            &--list {
+                position: static;
+            }
+        }
+
+        &__img {
+            height: 500px;
+
+            &--grid {
+                width: 100%;
+                height: 240px;
+            }
+        }
+
+        &__data {
+            display: flex;
+
+            &--grid {
+                display: block;
+                width: 100%;
+                max-width: 370px;
+            }
+
+            &--list {
+                display: block;
+                width: 100%;
+            }
+
+            &__text {
+                width: 70%;
+
+                &--grid {
+                    width: 100%;
+                }
+
+                &__title,
+                &__description {
+                    text-align: start;
+
+                    &--list {
+                        margin-top: 30px;
+                    }
+                }
+
+                &__title--grid,
+                &__description--grid {
+                    text-align: center;
+                }
+            }
+
+            &__properties {
+                width: 30%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+
+                &__price--list {
+                    font-size: 2.5rem;
+                }
+
+                &--grid {
+                    display: flex;
+                    justify-content: center;
+                    gap: 20px;
+                    width: 100%;
+                }
+
+                &--list {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 16px;
+                }
+
+                hr {
+                    display: block;
+                    width: 60px;
+                    border: 1px solid #F1F1F1;
+                }
+            }
+        }
+    }
+}

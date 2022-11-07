@@ -25,11 +25,16 @@
         background-color: var(--light-color-2);
         font-family: var(--font-archivo);
         color: var(--dark-color-terciary);
+
+        &::-webkit-calendar-picker-indicator {
+            filter: invert(0.6);
+        }
     }
 
     &--contact {
         display: inline-block;
         position: relative;
+        width: 100%;
 
         &__text {
             border: none;
@@ -38,6 +43,7 @@
             background-color: var(--light-color-2);
             font-family: var(--font-archivo);
             color: var(--dark-color-terciary);
+            width: 100%;
 
             &:focus {
                 outline: none;

@@ -1,5 +1,9 @@
 .topbar {
+    position: fixed;
+    width: 100%;
     display: block;
+    background-color: var(--white-color);
+    z-index: 3;
 
     &__container {
         display: flex;
@@ -59,6 +63,9 @@
 
 @media only screen and (min-width: 1000px) {
     .topbar {
+        margin: 40px 10% 0 10%;
+        width: 80%;
+
         &__container {
             &__images {
                 width: 25%;
@@ -80,6 +87,7 @@
                 display: flex;
                 width: 100%;
                 gap: 7%;
+                margin: 20px 0 10px 50px;
             }
 
             &--visible {
