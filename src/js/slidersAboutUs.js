@@ -1,4 +1,4 @@
-const swiper = new Swiper(".swiper-feature", {
+const swiperFeature = new Swiper(".swiper-feature", {
     direction: "horizontal",
     loop: true,
     slidesPerView: "1",
