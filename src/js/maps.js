@@ -127,6 +127,8 @@ const hotels = [
     },
 ]
 
+let map, infoWindow;
+
 function initMap() {
     const map = new google.maps.Map(
         document.getElementById("map"),
@@ -138,6 +140,34 @@ function initMap() {
             },
             center: hotels[0],
         });
+
+    infoWindow = new google.maps.InfoWindow();
+
+    const locationButton = document.querySelector(".button-location");
+
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+
+    locationButton.addEventListener("click", () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                const myLocation = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
+                };
+                infoWindow.setPosition(myLocation);
+                infoWindow.setContent("Current location");
+                infoWindow.open(map);
+                map.setCenter(myLocation);
+                map.setZoom(12);
+            },
+                () => {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                }
+            );
+        } else {
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
+    });
 
     const svgMarker = {
         path: "M10 20S3 10.87 3 7a7 7 0 1 1 14 0c0 3.87-7 13-7 13zm0-11a2 2 0 1 0 0-4 2 2 0 0 0 0 4z",
@@ -159,6 +189,16 @@ function initMap() {
     });
 
     const markerCluster = new markerClusterer.MarkerClusterer({ map, markers });
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(
+        browserHasGeolocation
+            ? "Error: The Geolocation service failed."
+            : "Error: Your browser doesn't support geolocation."
+    );
+    infoWindow.open(map);
 }
 
 window.initMap = initMap;
