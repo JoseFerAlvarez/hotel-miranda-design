@@ -1,6 +1,7 @@
 {
   "homepage": "https://JoseFerAlvarez.github.io/hotel-miranda-design",
   "devDependencies": {
+    "@types/google.maps": "^3.50.5",
     "http-server": "^14.1.1",
     "sass": "^1.55.0"
   },
@@ -9,6 +10,7 @@
     "compile": "sass --watch src/scss/styles.scss src/css/styles.css"
   },
   "dependencies": {
+    "@googlemaps/markerclusterer": "^2.0.13",
     "swiper": "^8.4.4"
   }
 }

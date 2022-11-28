@@ -105,7 +105,8 @@
             </div>
         </div>
 
-        <img class="details__image" src="./src/assets/images/room1.jpg">
+        <!-- <img class="details__image" src="./src/assets/images/room1.jpg"> -->
+        <div id="map"></div>
 
         <div class="details__inputs">
             <div class="details__inputs__group">
@@ -229,8 +230,11 @@
             </div>
         </div>
     </footer>
-
     <script type="module" src="./src/js/index.js"></script>
+    <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzhp-gjeksjUKrCvu14fvTA5mAgX8noes&callback=initMap"></script>
+    <script src="./src/js/maps.js"></script>
 </body>
 
 </html>
