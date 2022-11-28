@@ -169,6 +169,12 @@ function initMap() {
         }
     });
 
+    const matrixButton = document.querySelector(".button-matrix");
+    map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(matrixButton);
+    matrixButton.addEventListener("click", () => {
+        getDistanceMatrix();
+    });
+
     const svgMarker = {
         path: "M10 20S3 10.87 3 7a7 7 0 1 1 14 0c0 3.87-7 13-7 13zm0-11a2 2 0 1 0 0-4 2 2 0 0 0 0 4z",
         fillColor: "#d52a52",
@@ -199,6 +205,56 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
             : "Error: Your browser doesn't support geolocation."
     );
     infoWindow.open(map);
+}
+
+function getDistanceMatrix() {
+    let service = new google.maps.DistanceMatrixService();
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((location) => {
+            const myLocation = {
+                lat: location.coords.latitude,
+                lng: location.coords.longitude
+            }
+            service.getDistanceMatrix({
+                origins: [myLocation],
+                destinations: hotels,
+                travelMode: "DRIVING",
+            }, callback)
+        })
+    };
+}
+
+function callback(response, status) {
+    const locationList = document.querySelector(".location-list");
+
+    let html = `<table class="location-table">
+        <thead>
+            <tr>
+                <th>Destination</th>
+                <th>Distance</th>
+                <th>Duration</th>
+            </tr>
+        </thead>
+        <tbody>`;
+
+    console.log(response);
+
+    response.rows[0].elements.map((item, index) => {
+        const destination = response.destinationAddresses[index];
+        const origin = response.originAddresses[0];
+        const distance = Math.round((item.distance.value) / 1000) + " km";
+        const duration = item.duration.text;
+
+        html += `<tr>
+                    <td>${destination}</td>
+                    <td>${distance}</td>
+                    <td>${duration}</td>
+                </tr>`;
+    });
+
+    html += `</tbody></table>`;
+
+    locationList.innerHTML = html;
 }
 
 window.initMap = initMap;

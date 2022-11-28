@@ -1989,6 +1989,22 @@
   background-color: grey;
 }
 
+.location-list .location-table {
+  border-collapse: collapse;
+  margin: 20px 0 80px 0;
+  width: 100%;
+}
+.location-list .location-table th {
+  padding: 15px 5px;
+  font-family: var(--font-roboto);
+  text-align: start;
+}
+.location-list .location-table td {
+  border-top: 1px solid #D4D4D4;
+  padding: 15px 5px;
+  font-family: var(--font-roboto);
+}
+
 @media only screen and (min-width: 1000px) {
   .details {
     padding: 120px 19%;
