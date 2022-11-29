@@ -106,6 +106,31 @@
         </div>
 
         <!-- <img class="details__image" src="./src/assets/images/room1.jpg"> -->
+        <input type="text" class="address">
+        <button class="button-find-location">Find location</button>
+
+        <select class="regions">
+            <option value="0">Andalucía</option>
+            <option value="1">Aragón</option>
+            <option value="2">Asturias, Principado de</option>
+            <option value="3">Balears, Illes</option>
+            <option value="4">Canarias</option>
+            <option value="5">Cantabria</option>
+            <option value="6">Castilla y León</option>
+            <option value="7">Castilla - La Mancha</option>
+            <option value="8">Cataluña / Catalunya</option>
+            <option value="9">Comunitat Valenciana</option>
+            <option value="10">Extremadura</option>
+            <option value="11">Galicia</option>
+            <option value="12">Madrid, Comunidad de</option>
+            <option value="13">Murcia, Región de</option>
+            <option value="14">Navarra, Comunidad Foral de</option>
+            <option value="15">País Vasco / Euskadi</option>
+            <option value="16">Rioja, La</option>
+            <option value="17">Ceuta</option>
+            <option value="18">Melilla</option>
+        </select>
+
         <button class="button-map button-location">Find my location</button>
         <button class="button-map button-matrix">Get hotels distance</button>
         <div id="map"></div>
@@ -234,6 +259,8 @@
         </div>
     </footer>
     <script type="module" src="./src/js/index.js"></script>
+    <script src="./src/js/regionsSpain.js"></script>
+    <script src="./src/js/hotels.js"></script>
     <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzhp-gjeksjUKrCvu14fvTA5mAgX8noes&callback=initMap"></script>
