@@ -1989,6 +1989,16 @@
   background-color: grey;
 }
 
+.button-map {
+  font-family: var(--font-roboto);
+  border: none;
+  background-color: var(--white-color);
+  font-weight: 500;
+  font-size: 18px;
+  padding: 10px 15px;
+  margin: 10px;
+}
+
 .location-list .location-table {
   border-collapse: collapse;
   margin: 20px 0 80px 0;

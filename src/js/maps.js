@@ -237,7 +237,7 @@ function callback(response, status) {
         </thead>
         <tbody>`;
 
-    console.log(response);
+    const listHotel = getHotelsOrdered(response);
 
     response.rows[0].elements.map((item, index) => {
         const destination = response.destinationAddresses[index];
@@ -255,6 +255,23 @@ function callback(response, status) {
     html += `</tbody></table>`;
 
     locationList.innerHTML = html;
+}
+
+function getHotelsOrdered(response) {
+    let listHotels = [];
+
+    response.rows[0].elements.map((item, index) => {
+        const hotel = {
+            destination: response.destinationAddresses[index],
+            origin: response.originAddresses[0],
+            distance: Math.round((item.distance.value) / 1000) + " km",
+            duration: item.duration.text
+        }
+
+        listHotels.push(hotel);
+    })
+
+    return listHotels;
 }
 
 window.initMap = initMap;
