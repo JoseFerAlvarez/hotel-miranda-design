@@ -1,10 +1,9 @@
-let map, infoWindow;
+let map, infoWindow, markerCluster;
 
 function initMap() {
     const geocoder = new google.maps.Geocoder();
     let markers = null;
     let borderRegion = new google.maps.Polygon();
-    const markerCluster = new markerClusterer.MarkerClusterer({});
 
     map = new google.maps.Map(
         document.getElementById("map"),
@@ -20,13 +19,11 @@ function initMap() {
     });
 
     const locationButton = document.querySelector(".button-location");
-    /*   map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton); */
     locationButton.addEventListener("click", () => {
         getMyPosition(map);
     });
 
     const matrixButton = document.querySelector(".button-matrix");
-    /* map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(matrixButton); */
     matrixButton.addEventListener("click", () => {
         getDistanceMatrix();
     });
@@ -183,9 +180,15 @@ function codeAddress(geocoder, map, hotels) {
 
 const getRegionBorder = (borderRegion, region) => {
 
-    const regionHotels = hotels.filter(
-        (hotel) => hotel.region === comunitiesSpain[region]
-    );
+    let regionHotels = [];
+
+    if (region === "Spain") {
+        regionHotels = hotels;
+    } else {
+        regionHotels = hotels.filter(
+            (hotel) => hotel.region === comunitiesSpain[region]
+        );
+    }
 
     map = new google.maps.Map(
         document.getElementById("map"),
