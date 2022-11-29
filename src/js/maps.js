@@ -1,11 +1,12 @@
 let map, infoWindow;
 
 function initMap() {
-
     const geocoder = new google.maps.Geocoder();
     let markers = null;
+    let borderRegion = new google.maps.Polygon();
+    const markerCluster = new markerClusterer.MarkerClusterer({});
 
-    const map = new google.maps.Map(
+    map = new google.maps.Map(
         document.getElementById("map"),
         {
             zoom: 4,
@@ -14,38 +15,18 @@ function initMap() {
 
     infoWindow = new google.maps.InfoWindow();
 
-    const locationButton = document.querySelector(".button-location");
-
     document.querySelector(".regions").addEventListener("change", (e) => {
-        getRegionBorder(e.target.value, map);
+        getRegionBorder(borderRegion, e.target.value);
     });
 
-    map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
-
+    const locationButton = document.querySelector(".button-location");
+    /*   map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton); */
     locationButton.addEventListener("click", () => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position) => {
-                const myLocation = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude,
-                };
-                infoWindow.setPosition(myLocation);
-                infoWindow.setContent("Current location");
-                infoWindow.open(map);
-                map.setCenter(myLocation);
-                map.setZoom(12);
-            },
-                () => {
-                    handleLocationError(true, infoWindow, map.getCenter());
-                }
-            );
-        } else {
-            handleLocationError(false, infoWindow, map.getCenter());
-        }
+        getMyPosition(map);
     });
 
     const matrixButton = document.querySelector(".button-matrix");
-    map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(matrixButton);
+    /* map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(matrixButton); */
     matrixButton.addEventListener("click", () => {
         getDistanceMatrix();
     });
@@ -73,7 +54,29 @@ function initMap() {
         return marker;
     });
 
-    const markerCluster = new markerClusterer.MarkerClusterer({ map, markers });
+    markerCluster = new markerClusterer.MarkerClusterer({ map, markers });
+}
+
+function getMyPosition(map) {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const myLocation = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude,
+            };
+            infoWindow.setPosition(myLocation);
+            infoWindow.setContent("Current location");
+            infoWindow.open(map);
+            map.setCenter(myLocation);
+            map.setZoom(12);
+        },
+            () => {
+                handleLocationError(true, infoWindow, map.getCenter());
+            }
+        );
+    } else {
+        handleLocationError(false, infoWindow, map.getCenter());
+    }
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -133,6 +136,8 @@ function callback(response, status) {
 }
 
 function getHotelsOrdered(response) {
+
+
     let listHotels = [];
 
     response.rows[0].elements.map((item, index) => {
@@ -160,7 +165,11 @@ function codeAddress(geocoder, map, hotels) {
 
     geocoder.geocode({ address: address }, function (results, status) {
         if (status === "OK") {
+            infoWindow.setPosition(results[0].geometry.location);
+            infoWindow.setContent("Current location");
+            infoWindow.open(map);
             map.setCenter(results[0].geometry.location);
+            map.setZoom(12);
             service.getDistanceMatrix({
                 origins: [results[0].geometry.location],
                 destinations: hotels,
@@ -172,9 +181,20 @@ function codeAddress(geocoder, map, hotels) {
     });
 }
 
-const getRegionBorder = (region, map) => {
+const getRegionBorder = (borderRegion, region) => {
 
-    const borderRegion = new google.maps.Polygon({
+    const regionHotels = hotels.filter(
+        (hotel) => hotel.region === comunitiesSpain[region]
+    );
+
+    map = new google.maps.Map(
+        document.getElementById("map"),
+        {
+            zoom: regionHotels[0] ? 7 : 4,
+            center: regionHotels[0] ? regionHotels[0] : hotels[0],
+        });
+
+    borderRegion = new google.maps.Polygon({
         paths: regionsSpain[region],
         strokeColor: "#FF0000",
         strokeOpacity: 0.8,
@@ -183,6 +203,26 @@ const getRegionBorder = (region, map) => {
         fillOpacity: 0.1,
     });
 
+    const svgMarker = {
+        path: "M10 20S3 10.87 3 7a7 7 0 1 1 14 0c0 3.87-7 13-7 13zm0-11a2 2 0 1 0 0-4 2 2 0 0 0 0 4z",
+        fillColor: "#d52a52",
+        fillOpacity: 1,
+        strokeWeight: 0.15,
+        rotation: 0,
+        scale: 1.5,
+        anchor: new google.maps.Point(15, 30),
+    };
+
+    markers = regionHotels.map((hotel) => {
+        const marker = new google.maps.Marker({
+            position: hotel,
+            icon: svgMarker,
+            map: map,
+        });
+        return marker;
+    });
+
+    const markerCluster = new markerClusterer.MarkerClusterer({ map, markers });
     borderRegion.setMap(map);
 }
 
