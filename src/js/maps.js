@@ -1,36 +1,14 @@
-let map, infoWindow, markerCluster;
+let map, infoWindow, cluster, currentPosition, geocoder, markers, borderRegion, regions;
 
 function initMap() {
-    const geocoder = new google.maps.Geocoder();
-    let markers = null;
-    let borderRegion = new google.maps.Polygon();
 
+    /*Variable declaration*/
     map = new google.maps.Map(
         document.getElementById("map"),
         {
             zoom: 4,
             center: hotels[0],
         });
-
-    infoWindow = new google.maps.InfoWindow();
-
-    document.querySelector(".regions").addEventListener("change", (e) => {
-        getRegionBorder(borderRegion, e.target.value);
-    });
-
-    const locationButton = document.querySelector(".button-location");
-    locationButton.addEventListener("click", () => {
-        getMyPosition(map);
-    });
-
-    const matrixButton = document.querySelector(".button-matrix");
-    matrixButton.addEventListener("click", () => {
-        getDistanceMatrix();
-    });
-
-    document.querySelector(".button-find-location").addEventListener("click", () => {
-        codeAddress(geocoder, map, hotels);
-    });
 
     const svgMarker = {
         path: "M10 20S3 10.87 3 7a7 7 0 1 1 14 0c0 3.87-7 13-7 13zm0-11a2 2 0 1 0 0-4 2 2 0 0 0 0 4z",
@@ -42,6 +20,17 @@ function initMap() {
         anchor: new google.maps.Point(15, 30),
     };
 
+    regions = regionsSpain.map((region) => {
+        return new google.maps.Polygon({
+            paths: region,
+            strokeColor: "#FF0000",
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: "#FF0000",
+            fillOpacity: 0.1,
+        });
+    });
+
     markers = hotels.map((hotel) => {
         const marker = new google.maps.Marker({
             position: hotel,
@@ -51,20 +40,43 @@ function initMap() {
         return marker;
     });
 
-    markerCluster = new markerClusterer.MarkerClusterer({ map, markers });
+    geocoder = new google.maps.Geocoder();
+    borderRegion = new google.maps.Polygon();
+    infoWindow = new google.maps.InfoWindow();
+    cluster = new markerClusterer.MarkerClusterer({ map, markers });
+
+    const regionsSelect = document.querySelector(".regions");
+    regionsSelect.addEventListener("change", (e) => {
+        getRegionBorder(borderRegion, e.target.value);
+    });
+
+    const locationButton = document.querySelector(".button-location");
+    locationButton.addEventListener("click", () => {
+        getMyPosition(map);
+    });
+
+    const matrixButton = document.querySelector(".button-matrix");
+    matrixButton.addEventListener("click", () => {
+        getDistanceMatrix(currentPosition);
+    });
+
+    const findLocation = document.querySelector(".button-find-location");
+    findLocation.addEventListener("click", () => {
+        codeAddress(geocoder, map, hotels);
+    });
 }
 
 function getMyPosition(map) {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
-            const myLocation = {
+            currentPosition = {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude,
             };
-            infoWindow.setPosition(myLocation);
+            infoWindow.setPosition(currentPosition);
             infoWindow.setContent("Current location");
             infoWindow.open(map);
-            map.setCenter(myLocation);
+            map.setCenter(currentPosition);
             map.setZoom(12);
         },
             () => {
@@ -76,6 +88,34 @@ function getMyPosition(map) {
     }
 }
 
+function codeAddress(geocoder, map, hotels) {
+    let address = document.querySelector(".address").value;
+    let service = new google.maps.DistanceMatrixService();
+    let result = null;
+
+    geocoder.geocode({ address: address }, function (results, status) {
+        if (status === "OK") {
+            infoWindow.setPosition(results[0].geometry.location);
+            infoWindow.setContent("Current location");
+            infoWindow.open(map);
+            map.setCenter(results[0].geometry.location);
+            map.setZoom(12);
+            currentPosition = results[0].geometry.location;
+        } else {
+            alert("Geocode no va por " + status);
+        }
+    });
+}
+
+function getDistanceMatrix(currentPosition) {
+    let service = new google.maps.DistanceMatrixService();
+    service.getDistanceMatrix({
+        origins: [currentPosition],
+        destinations: hotels,
+        travelMode: "DRIVING",
+    }, printDistanceList)
+};
+
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(
@@ -86,25 +126,8 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 }
 
-function getDistanceMatrix() {
-    let service = new google.maps.DistanceMatrixService();
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((location) => {
-            const myLocation = {
-                lat: location.coords.latitude,
-                lng: location.coords.longitude
-            }
-
-            service.getDistanceMatrix({
-                origins: [myLocation],
-                destinations: hotels,
-                travelMode: "DRIVING",
-            }, callback)
-        })
-    };
-}
-
-function callback(response, status) {
+/*TODO: Cambiar el innerhtml por elementos anidados*/
+function printDistanceList(response, status) {
     const locationList = document.querySelector(".location-list");
 
     let html = `<table class="location-table">
@@ -133,8 +156,6 @@ function callback(response, status) {
 }
 
 function getHotelsOrdered(response) {
-
-
     let listHotels = [];
 
     response.rows[0].elements.map((item, index) => {
@@ -155,30 +176,13 @@ function getHotelsOrdered(response) {
     return listHotels;
 }
 
-function codeAddress(geocoder, map, hotels) {
-    let address = document.querySelector(".address").value;
-    let service = new google.maps.DistanceMatrixService();
-    let result = null;
-
-    geocoder.geocode({ address: address }, function (results, status) {
-        if (status === "OK") {
-            infoWindow.setPosition(results[0].geometry.location);
-            infoWindow.setContent("Current location");
-            infoWindow.open(map);
-            map.setCenter(results[0].geometry.location);
-            map.setZoom(12);
-            service.getDistanceMatrix({
-                origins: [results[0].geometry.location],
-                destinations: hotels,
-                travelMode: "DRIVING",
-            }, callback);
-        } else {
-            alert("Geocode no va por " + status);
-        }
-    });
-}
-
 const getRegionBorder = (borderRegion, region) => {
+
+    regions.forEach((item) => {
+        item.setMap(null);
+    });
+
+    cluster.clearMarkers();
 
     let regionHotels = [];
 
@@ -190,21 +194,10 @@ const getRegionBorder = (borderRegion, region) => {
         );
     }
 
-    map = new google.maps.Map(
-        document.getElementById("map"),
-        {
-            zoom: regionHotels[0] ? 7 : 4,
-            center: regionHotels[0] ? regionHotels[0] : hotels[0],
-        });
+    if (region !== "Spain") {
+        regions[region].setMap(map);
+    }
 
-    borderRegion = new google.maps.Polygon({
-        paths: regionsSpain[region],
-        strokeColor: "#FF0000",
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: "#FF0000",
-        fillOpacity: 0.1,
-    });
 
     const svgMarker = {
         path: "M10 20S3 10.87 3 7a7 7 0 1 1 14 0c0 3.87-7 13-7 13zm0-11a2 2 0 1 0 0-4 2 2 0 0 0 0 4z",
@@ -216,17 +209,18 @@ const getRegionBorder = (borderRegion, region) => {
         anchor: new google.maps.Point(15, 30),
     };
 
-    markers = regionHotels.map((hotel) => {
-        const marker = new google.maps.Marker({
+    cluster.addMarkers(regionHotels.map((hotel) => {
+        return new google.maps.Marker({
             position: hotel,
             icon: svgMarker,
             map: map,
         });
-        return marker;
-    });
+    }));
 
-    const markerCluster = new markerClusterer.MarkerClusterer({ map, markers });
-    borderRegion.setMap(map);
+    if (regionHotels.length > 0) {
+        map.setCenter(regionHotels[0]);
+        map.setZoom(6);
+    }
 }
 
 window.initMap = initMap;
