@@ -1,4 +1,19 @@
-let map, infoWindow, cluster, currentPosition, geocoder, markers, borderRegion, regions;
+let map, infoWindow, cluster, currentPosition, geocoder, markers, borderRegion, regions, currentHotels;
+
+let svgMarker = {
+    path: "M10 20S3 10.87 3 7a7 7 0 1 1 14 0c0 3.87-7 13-7 13zm0-11a2 2 0 1 0 0-4 2 2 0 0 0 0 4z",
+    fillColor: "#d52a52",
+    fillOpacity: 1,
+    strokeWeight: 0.15,
+    rotation: 0,
+    scale: 1.5,
+    anchor: "",
+};
+
+const puertaDelSol = {
+    lat: 40.416959,
+    lng: -3.703527,
+}
 
 function initMap() {
 
@@ -7,18 +22,13 @@ function initMap() {
         document.getElementById("map"),
         {
             zoom: 4,
-            center: hotels[0],
+            center: puertaDelSol
         });
 
-    const svgMarker = {
-        path: "M10 20S3 10.87 3 7a7 7 0 1 1 14 0c0 3.87-7 13-7 13zm0-11a2 2 0 1 0 0-4 2 2 0 0 0 0 4z",
-        fillColor: "#d52a52",
-        fillOpacity: 1,
-        strokeWeight: 0.15,
-        rotation: 0,
-        scale: 1.5,
-        anchor: new google.maps.Point(15, 30),
-    };
+    currentHotels = hotels;
+
+    svgMarker.anchor = new google.maps.Point(15, 30);
+
 
     regions = regionsSpain.map((region) => {
         return new google.maps.Polygon({
@@ -46,16 +56,19 @@ function initMap() {
     cluster = new markerClusterer.MarkerClusterer({ map, markers });
 
     const regionsSelect = document.querySelector(".regions");
+    map.controls[google.maps.ControlPosition.LEFT_TOP].push(regionsSelect);
     regionsSelect.addEventListener("change", (e) => {
         getRegionBorder(borderRegion, e.target.value);
     });
 
     const locationButton = document.querySelector(".button-location");
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
     locationButton.addEventListener("click", () => {
         getMyPosition(map);
     });
 
     const matrixButton = document.querySelector(".button-matrix");
+    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(matrixButton);
     matrixButton.addEventListener("click", () => {
         getDistanceMatrix(currentPosition);
     });
@@ -108,12 +121,14 @@ function codeAddress(geocoder, map, hotels) {
 }
 
 function getDistanceMatrix(currentPosition) {
-    let service = new google.maps.DistanceMatrixService();
-    service.getDistanceMatrix({
-        origins: [currentPosition],
-        destinations: hotels,
-        travelMode: "DRIVING",
-    }, printDistanceList)
+    if (currentPosition) {
+        let service = new google.maps.DistanceMatrixService();
+        service.getDistanceMatrix({
+            origins: [currentPosition],
+            destinations: currentHotels,
+            travelMode: "DRIVING",
+        }, printDistanceList)
+    }
 };
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -177,39 +192,24 @@ function getHotelsOrdered(response) {
 }
 
 const getRegionBorder = (borderRegion, region) => {
-
     regions.forEach((item) => {
         item.setMap(null);
     });
 
     cluster.clearMarkers();
 
-    let regionHotels = [];
-
     if (region === "Spain") {
-        regionHotels = hotels;
+        currentHotels = hotels;
     } else {
-        regionHotels = hotels.filter(
+        currentHotels = hotels.filter(
             (hotel) => hotel.region === comunitiesSpain[region]
         );
-    }
-
-    if (region !== "Spain") {
         regions[region].setMap(map);
     }
 
+    svgMarker.anchor = new google.maps.Point(15, 30);
 
-    const svgMarker = {
-        path: "M10 20S3 10.87 3 7a7 7 0 1 1 14 0c0 3.87-7 13-7 13zm0-11a2 2 0 1 0 0-4 2 2 0 0 0 0 4z",
-        fillColor: "#d52a52",
-        fillOpacity: 1,
-        strokeWeight: 0.15,
-        rotation: 0,
-        scale: 1.5,
-        anchor: new google.maps.Point(15, 30),
-    };
-
-    cluster.addMarkers(regionHotels.map((hotel) => {
+    cluster.addMarkers(currentHotels.map((hotel) => {
         return new google.maps.Marker({
             position: hotel,
             icon: svgMarker,
@@ -217,8 +217,8 @@ const getRegionBorder = (borderRegion, region) => {
         });
     }));
 
-    if (regionHotels.length > 0) {
-        map.setCenter(regionHotels[0]);
+    if (currentHotels.length > 0) {
+        map.setCenter(currentHotels[0]);
         map.setZoom(6);
     }
 }

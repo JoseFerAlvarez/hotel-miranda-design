@@ -92,6 +92,40 @@
     }
 }
 
+.regions {
+    font-family: var(--font-roboto);
+    border: none;
+    background-color: var(--white-color);
+    padding: 10px 15px;
+    margin: 10px;
+}
+
+.address {
+    width: 30%;
+    border: none;
+    border-bottom: 1px solid #D4D4D4;
+    font-family: var(--font-roboto);
+    background-color: var(--white-color);
+    padding: 10px 15px;
+    margin: 10px;
+}
+
+.button-find-location {
+    transition: background-color 0.2s;
+    font-family: var(--font-roboto);
+    border: 1px solid #D4D4D4;
+    border-radius: 8px;
+    background-color: var(--white-color);
+    font-weight: 500;
+    font-size: 18px;
+    padding: 10px 15px;
+    margin: 10px;
+
+    &:hover {
+        background-color: #F8F8F8;
+    }
+}
+
 @media only screen and (min-width: 1000px) {
     .details {
         padding: 120px 19%;
