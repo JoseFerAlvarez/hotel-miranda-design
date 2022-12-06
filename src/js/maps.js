@@ -10,6 +10,7 @@ let svgMarker = {
     anchor: "",
 };
 
+/** The center of spain*/
 const puertaDelSol = {
     lat: 40.416959,
     lng: -3.703527,
@@ -29,7 +30,7 @@ function initMap() {
 
     svgMarker.anchor = new google.maps.Point(15, 30);
 
-
+    /*Creates the polygons of all regions*/
     regions = regionsSpain.map((region) => {
         return new google.maps.Polygon({
             paths: region,
@@ -79,6 +80,7 @@ function initMap() {
     });
 }
 
+/** Collects the current location and displays it on the map */
 function getMyPosition(map) {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
@@ -90,7 +92,7 @@ function getMyPosition(map) {
             infoWindow.setContent("Current location");
             infoWindow.open(map);
             map.setCenter(currentPosition);
-            map.setZoom(12);
+            map.setZoom(10);
         },
             () => {
                 handleLocationError(true, infoWindow, map.getCenter());
@@ -101,6 +103,7 @@ function getMyPosition(map) {
     }
 }
 
+/** Geocodes the given location and displays it on the map */
 function codeAddress(geocoder, map, hotels) {
     let address = document.querySelector(".address").value;
     let service = new google.maps.DistanceMatrixService();
@@ -109,17 +112,16 @@ function codeAddress(geocoder, map, hotels) {
     geocoder.geocode({ address: address }, function (results, status) {
         if (status === "OK") {
             infoWindow.setPosition(results[0].geometry.location);
-            infoWindow.setContent("Current location");
+            infoWindow.setContent("Address location");
             infoWindow.open(map);
             map.setCenter(results[0].geometry.location);
             map.setZoom(12);
             currentPosition = results[0].geometry.location;
-        } else {
-            alert("Geocode no va por " + status);
         }
     });
 }
 
+/** Returns the distance between the current location and the given hotels*/
 function getDistanceMatrix(currentPosition) {
     if (currentPosition) {
         let service = new google.maps.DistanceMatrixService();
@@ -141,35 +143,49 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 }
 
-/*TODO: Cambiar el innerhtml por elementos anidados*/
+/*Creates a table of the distance between the current location and existing hotels*/
 function printDistanceList(response, status) {
     const locationList = document.querySelector(".location-list");
 
-    let html = `<table class="location-table">
-        <thead>
-            <tr>
-                <th>Destination</th>
-                <th>Distance</th>
-                <th>Duration</th>
-            </tr>
-        </thead>
-        <tbody>`;
+    const table = document.createElement("table");
+    table.classList.add("location-table");
+    locationList.appendChild(table);
+
+    const thead = document.createElement("thead");
+    table.appendChild(thead);
+
+    const trTitle = document.createElement("tr");
+    thead.appendChild(trTitle);
+
+    const titles = ["Destination", "Distance", "Duration"];
+
+    titles.forEach((title) => {
+        const th = document.createElement("th");
+        th.innerText = title;
+        trTitle.appendChild(th);
+    });
 
     const listHotels = getHotelsOrdered(response);
 
     listHotels.map((hotel, index) => {
-        html += `<tr>
-                    <td>${hotel.destination}</td>
-                    <td>${Math.round((hotel.distance) / 1000)} km</td>
-                    <td>${hotel.duration}</td>
-                </tr>`;
+        const trdata = document.createElement("tr");
+        table.appendChild(trdata);
+
+        const tdDestination = document.createElement("td");
+        tdDestination.innerText = hotel.destination;
+        trdata.appendChild(tdDestination);
+
+        const tdDistance = document.createElement("td");
+        tdDistance.innerText = `${Math.round((hotel.distance) / 1000)} km`;
+        trdata.appendChild(tdDistance);
+
+        const tdDuration = document.createElement("td");
+        tdDuration.innerText = hotel.duration;
+        trdata.appendChild(tdDuration);
     });
-
-    html += `</tbody></table>`;
-
-    locationList.innerHTML = html;
 }
 
+/* Sorts the given hotels by their distance and returns them */
 function getHotelsOrdered(response) {
     let listHotels = [];
 
@@ -191,6 +207,7 @@ function getHotelsOrdered(response) {
     return listHotels;
 }
 
+/* Picks up the selected region and plots it on the map with the hotels in the area. */
 const getRegionBorder = (borderRegion, region) => {
     regions.forEach((item) => {
         item.setMap(null);
